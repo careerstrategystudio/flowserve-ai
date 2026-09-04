@@ -469,9 +469,9 @@ section{padding:clamp(60px,8vw,108px) 0}
         <g id="pipe-rows"></g>
       </svg>
       <div class="pipe-foot">
-        <div class="stat"><div class="n" id="stat1n">94%</div><div class="l" id="stat1l"></div></div>
-        <div class="stat"><div class="n" id="stat2n">0s</div><div class="l" id="stat2l"></div></div>
-        <div class="stat"><div class="n" id="stat3n">24/7</div><div class="l" id="stat3l"></div></div>
+        <div class="stat"><div class="n" id="stat1n">24/7</div><div class="l" id="stat1l"></div></div>
+        <div class="stat"><div class="n" id="stat2n">60 s</div><div class="l" id="stat2l"></div></div>
+        <div class="stat"><div class="n" id="stat3n">4</div><div class="l" id="stat3l"></div></div>
       </div>
     </div>
   </div>
@@ -553,7 +553,7 @@ section{padding:clamp(60px,8vw,108px) 0}
       <div class="form-trust">
         <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-es="Sin compromiso. Revisamos y te contactamos." data-en="No commitment. We review and get back to you.">Sin compromiso. Revisamos y te contactamos.</span></div>
         <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-es="Activación acompañada, cuando el flujo esté probado." data-en="Guided activation, once the flow is tested.">Activación acompañada, cuando el flujo esté probado.</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-es="Datos en infraestructura europea. GDPR." data-en="Data on EU infrastructure. GDPR.">Datos en infraestructura europea. GDPR.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-es="Contrato de encargado de tratamiento con cada cliente." data-en="Data processing agreement with every client.">Contrato de encargado de tratamiento con cada cliente.</span></div>
       </div>
     </div>
 
@@ -704,7 +704,7 @@ section{padding:clamp(60px,8vw,108px) 0}
         <div class="foot-col">
           <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
           <a href="#evaluacion" data-es="Solicitar evaluación" data-en="Request assessment">Solicitar evaluación</a>
-          <a href="#evaluacion" data-es="Escríbenos" data-en="Contact us">Escríbenos</a>
+          <a href="https://wa.me/353876071214" target="_blank" rel="noopener" data-es="Escríbenos por WhatsApp" data-en="Message us on WhatsApp">Escríbenos por WhatsApp</a>
         </div>
       </div>
     </div>
@@ -712,6 +712,7 @@ section{padding:clamp(60px,8vw,108px) 0}
       <span>© <span id="year"></span> Flowserve AI</span>
       <span class="foot-legal-links">
         <a href="#" onclick="openPrivacy(event)" data-es="Política de privacidad" data-en="Privacy policy">Política de privacidad</a>
+        <a href="#" onclick="openLegal(event)" data-es="Aviso legal" data-en="Legal notice">Aviso legal</a>
         <span data-es="España · Irlanda · Latam" data-en="Spain · Ireland · Latam">España · Irlanda · Latam</span>
       </span>
     </div>
@@ -732,6 +733,20 @@ section{padding:clamp(60px,8vw,108px) 0}
   </div>
 </div>
 
+<!-- LEGAL NOTICE MODAL -->
+<div class="modal-back" id="legalModal" onclick="if(event.target===this)closeLegal()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="lgTitle">
+    <div class="modal-head">
+      <div>
+        <h2 id="lgTitle" data-es="Aviso legal" data-en="Legal notice">Aviso legal</h2>
+        <span class="upd" data-es="Última actualización: septiembre 2026" data-en="Last updated: September 2026">Última actualización: septiembre 2026</span>
+      </div>
+      <button class="modal-x" onclick="closeLegal()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body" id="legalBody"></div>
+  </div>
+</div>
+
 <script>
 /* ============================================================
    DATA MODEL
@@ -749,7 +764,7 @@ const CONTENT = {
   hosteleria:{
     es:{
       heroSub:"Reservas que no se cancelan, pedidos que no se pierden y una operación que responde de madrugada. Para restaurantes, clubes y comercios.",
-      stats:[["94%","Mesas recuperadas"],["0s","Espera al cliente"],["24/7","Atención activa"]],
+      stats:[["24/7","Atención activa"],["60 s","Primera respuesta objetivo"],["4","Agentes en el plan"]],
       agents:[
         {ic:"anti",tag:"Anti-cancelaciones",t:"Agente anti-cancelaciones",d:"Cuando cae una reserva, rellena el hueco desde tu lista de espera antes de que la mesa quede vacía."},
         {ic:"care",tag:"Atención 24/7",t:"Agente de atención 24/7",d:"Responde reservas, pedidos y dudas por WhatsApp o web a cualquier hora, con el tono de tu marca."},
@@ -760,7 +775,7 @@ const CONTENT = {
     },
     en:{
       heroSub:"Bookings that don't cancel, orders that don't get lost, and an operation that answers at 2am. For restaurants, clubs and shops.",
-      stats:[["94%","Tables recovered"],["0s","Customer wait"],["24/7","Live coverage"]],
+      stats:[["24/7","Live coverage"],["60 s","Target first response"],["4","Agents in the plan"]],
       agents:[
         {ic:"anti",tag:"Anti-cancellation",t:"Anti-cancellation agent",d:"When a booking drops, it fills the slot from your waitlist before the table goes empty."},
         {ic:"care",tag:"24/7 care",t:"24/7 care agent",d:"Handles bookings, orders and questions on WhatsApp or web any time, in your brand's voice."},
@@ -773,7 +788,7 @@ const CONTENT = {
   salud:{
     es:{
       heroSub:"Una recepción que nunca va al buzón de voz: contesta, agenda, rellena cancelaciones y persigue revisiones. Para clínicas, dentistas y fisios.",
-      stats:[["31%","Menos ausencias"],["0s","Llamada sin atender"],["24/7","Agenda cubierta"]],
+      stats:[["24/7","Agenda cubierta"],["48h + 24h","Recordatorios antes de la cita"],["60 s","Primera respuesta objetivo"]],
       agents:[
         {ic:"anti",tag:"Anti-cancelaciones",t:"Agente anti-cancelaciones",d:"Rellena el hueco de una cita cancelada avisando a pacientes en lista de espera, automáticamente."},
         {ic:"care",tag:"Atención 24/7",t:"Agente de atención 24/7",d:"Contesta llamadas y mensajes, agenda y resuelve dudas administrativas. Nunca da consejo clínico."},
@@ -784,7 +799,7 @@ const CONTENT = {
     },
     en:{
       heroSub:"A front desk that never goes to voicemail: answers, books, fills cancellations and chases recalls. For clinics, dentists and physios.",
-      stats:[["31%","Fewer no-shows"],["0s","Missed calls"],["24/7","Diary covered"]],
+      stats:[["24/7","Diary covered"],["48h + 24h","Reminders before the appointment"],["60 s","Target first response"]],
       agents:[
         {ic:"anti",tag:"Anti-cancellation",t:"Anti-cancellation agent",d:"Fills a cancelled slot by messaging waitlisted patients, automatically."},
         {ic:"care",tag:"24/7 care",t:"24/7 care agent",d:"Answers calls and messages, books appointments and handles admin questions. Never gives clinical advice."},
@@ -797,7 +812,7 @@ const CONTENT = {
   servicios:{
     es:{
       heroSub:"Cada consulta atendida, cada oportunidad con seguimiento y cada cliente inactivo reactivado. Para despachos, consultoras y marcas personales.",
-      stats:[["3x","Oportunidades con seguimiento"],["0s","Consulta sin responder"],["24/7","Captación activa"]],
+      stats:[["24/7","Captación activa"],["60 s","Primera respuesta objetivo"],["4","Agentes en el plan"]],
       agents:[
         {ic:"anti",tag:"Anti-cancelaciones",t:"Agente anti-cancelaciones",d:"Reprograma reuniones y citas canceladas sin que pierdas el hueco ni el cliente."},
         {ic:"care",tag:"Atención 24/7",t:"Agente de atención 24/7",d:"Cualifica consultas entrantes, recoge los datos del contacto y agenda la primera reunión."},
@@ -808,7 +823,7 @@ const CONTENT = {
     },
     en:{
       heroSub:"Every enquiry answered, every lead followed up, every dormant client reactivated. For firms, consultancies and personal brands.",
-      stats:[["3x","Leads followed up"],["0s","Enquiry unanswered"],["24/7","Live intake"]],
+      stats:[["24/7","Live intake"],["60 s","Target first response"],["4","Agents in the plan"]],
       agents:[
         {ic:"anti",tag:"Anti-cancellation",t:"Anti-cancellation agent",d:"Reschedules cancelled meetings and appointments so you lose neither the slot nor the client."},
         {ic:"care",tag:"24/7 care",t:"24/7 care agent",d:"Qualifies incoming enquiries, collects lead details and books the first meeting."},
@@ -838,19 +853,19 @@ const VERTICALS = {
    SaaS/chatbot mid-market (~30-40% lower). Tuned down for early stage. */
 const PRICING = {
   es:{
-    market:"Precios para España · IVA no incluido · Facturación mensual",
+    market:"IVA no incluido · Cuota mensual, cancelas con 30 días de aviso · Piloto de 30 días por €290, que se descuenta de la implementación si continúas",
     plans:[
-      {name:"Esencial",desc:"Un negocio que necesita atención cubierta y la agenda respondida.",price:"€89",per:"/mes",feats:["1 agente a elegir","Atención por WhatsApp o web","Agenda y confirmaciones","Recordatorios automáticos","Soporte por email"],cta:"Empezar",feat:false},
-      {name:"Profesional",desc:"La operación completa. Donde está el dinero de las cancelaciones.",price:"€199",per:"/mes",feats:["Los 4 agentes, 24/7","Anti-cancelaciones y recall","Pagos y links de cobro","Panel / CRM e indicadores","WhatsApp API + chat web","Revisión mensual con un responsable"],cta:"Solicitar evaluación",feat:true,badge:"Más elegido"},
-      {name:"A medida",desc:"Varias sedes, integraciones o procesos especiales.",price:"desde €449",per:"/mes",feats:["Todo lo de Profesional","Agentes ilimitados","Multi-sede y reporting","Integraciones y migración","Segundo idioma en línea","Soporte DPIA / GDPR"],cta:"Hablar con el equipo",feat:false}
+      {name:"Esencial",desc:"Un negocio que necesita atención cubierta y la agenda respondida.",price:"€149",per:"/mes",feats:["Implementación: €390 (pago único)","1 agente a elegir","Atención por WhatsApp o web","Agenda y confirmaciones","Recordatorios automáticos","Soporte por email"],cta:"Empezar",feat:false},
+      {name:"Profesional",desc:"La operación completa. Donde está el dinero de las cancelaciones.",price:"€329",per:"/mes",feats:["Implementación: €690 (pago único)","Los 4 agentes, 24/7","Anti-cancelaciones y recall","Pagos y links de cobro","Panel / CRM e indicadores","WhatsApp API + chat web","Revisión mensual con un responsable"],cta:"Solicitar evaluación",feat:true,badge:"Más elegido"},
+      {name:"A medida",desc:"Varias sedes, integraciones o procesos especiales.",price:"A medida",per:"",feats:["Todo lo de Profesional","Agentes ilimitados","Multi-sede y reporting","Integraciones y migración","Segundo idioma en línea","Soporte DPIA / GDPR"],cta:"Hablar con el equipo",feat:false}
     ]
   },
   en:{
-    market:"Pricing for Ireland · VAT not included · Billed monthly",
+    market:"VAT not included · Monthly fee, cancel with 30 days notice · 30-day pilot for €290, credited against setup if you continue",
     plans:[
-      {name:"Essential",desc:"A business that needs coverage and the diary answered.",price:"€129",per:"/mo",feats:["1 agent of your choice","WhatsApp or web support","Scheduling and confirmations","Automatic reminders","Email support"],cta:"Get started",feat:false},
-      {name:"Professional",desc:"The full operation. Where the cancellation money actually is.",price:"€289",per:"/mo",feats:["All 4 agents, 24/7","Anti-cancellation and recall","Payments and payment links","Panel / CRM and metrics","WhatsApp API + web chat","Monthly review with a named lead"],cta:"Request assessment",feat:true,badge:"Most chosen"},
-      {name:"Custom",desc:"Multiple sites, integrations or special processes.",price:"from €649",per:"/mo",feats:["Everything in Professional","Unlimited agents","Multi-site and reporting","Integrations and migration","Second language on the line","DPIA / GDPR support"],cta:"Talk to the team",feat:false}
+      {name:"Essential",desc:"A business that needs coverage and the diary answered.",price:"€149",per:"/mo",feats:["Setup: €390 (one-off)","1 agent of your choice","WhatsApp or web support","Scheduling and confirmations","Automatic reminders","Email support"],cta:"Get started",feat:false},
+      {name:"Professional",desc:"The full operation. Where the cancellation money actually is.",price:"€329",per:"/mo",feats:["Setup: €690 (one-off)","All 4 agents, 24/7","Anti-cancellation and recall","Payments and payment links","Panel / CRM and metrics","WhatsApp API + web chat","Monthly review with a named lead"],cta:"Request assessment",feat:true,badge:"Most chosen"},
+      {name:"Custom",desc:"Multiple sites, integrations or special processes.",price:"Custom",per:"",feats:["Everything in Professional","Unlimited agents","Multi-site and reporting","Integrations and migration","Second language on the line","DPIA / GDPR support"],cta:"Talk to the team",feat:false}
     ]
   }
 };
@@ -859,14 +874,14 @@ const FAQ = {
   es:[
     {q:"¿Flowserve AI es solo un chatbot?",a:"No. Un chatbot responde. Flowserve opera: agenda, rellena cancelaciones, cobra, controla costes y recupera clientes, y deja todo en un panel que tú controlas."},
     {q:"¿Sirve para mi tipo de negocio?",a:"Está pensado para hostelería, salud y servicios profesionales. El motor es el mismo; cambian los flujos según cómo trabaja cada negocio. Si no encajas en un cajón, lo vemos en la evaluación."},
-    {q:"¿Dónde están mis datos y quién los ve?",a:"Infraestructura europea, acceso por roles y cada acceso queda registrado. Cumplimos GDPR y nada se usa para entrenar modelos. Tu responsable de datos puede estar en la llamada."},
+    {q:"¿Dónde están mis datos y quién los ve?",a:"Firmamos contigo un contrato de encargado de tratamiento (artículo 28 del RGPD) donde queda por escrito qué datos tratamos, para qué y cuánto tiempo se conservan, con la lista de proveedores que intervienen. El acceso es por roles y queda registrado, y nada se usa para entrenar modelos. Tu responsable de datos puede estar en la llamada."},
     {q:"¿Cuánto tardo en tenerlo funcionando?",a:"Un flujo concreto suele estar activo en unos 10 días laborables, con un par de horas de tu tiempo. Primero probamos el recorrido completo; activamos cuando está listo para clientes reales."},
     {q:"¿Me quedo atado a un contrato?",a:"No. Cuota mensual, cancelas con 30 días de aviso. Preferimos que te quedes porque funciona, no porque firmaste algo."}
   ],
   en:[
     {q:"Is Flowserve AI just a chatbot?",a:"No. A chatbot replies. Flowserve operates: it books, fills cancellations, charges, controls costs and recovers clients, leaving everything in a panel you control."},
     {q:"Does it fit my type of business?",a:"It's built for hospitality, healthcare and professional services. The engine is the same; the flows change to match how each business runs. If you don't fit a box, we work it out in the assessment."},
-    {q:"Where is my data and who can see it?",a:"EU infrastructure, role-based access, and every access is logged. We're GDPR-compliant and nothing is used to train models. Your data lead is welcome on the call."},
+    {q:"Where is my data and who can see it?",a:"We sign a data processing agreement (GDPR Article 28) with you, setting out in writing what data we handle, what for and how long it is kept, along with the list of providers involved. Access is role-based and logged, and nothing is used to train models. Your data lead is welcome on the call."},
     {q:"How long until it's running?",a:"A concrete flow is usually live in about 10 working days, with a couple of hours of your time. We test the full journey first and activate when it's ready for real clients."},
     {q:"Am I tied into a contract?",a:"No. Monthly fee, cancel with 30 days' notice. We'd rather you stay because it works than because you signed something."}
   ]
@@ -880,7 +895,7 @@ const PHONE_ES = "+34 653 35 35 02";
 const PRIVACY = {
   es:`
     <div class="pv-meta">
-      <div><b>Responsable</b>Flowserve AI</div>
+      <div><b>Responsable</b>Flowserve AI, nombre comercial de Javier Ayala — entidad en constitución en Irlanda</div>
       <div><b>Contacto Irlanda</b>${PHONE_IE}</div>
       <div><b>Contacto España</b>${PHONE_ES}</div>
     </div>
@@ -893,13 +908,26 @@ const PRIVACY = {
     <p>Usamos esa información con un objetivo operativo concreto: atender tu solicitud, preparar y configurar la solución, coordinar evaluaciones y activaciones, y gestionar reservas, citas, pedidos, pagos o campañas según tu caso. También nos permite dar continuidad al servicio —confirmaciones, recordatorios y seguimiento— y mejorar la calidad de la atención. No vendemos datos ni los usamos para entrenar modelos.</p>
 
     <h3>3. Proveedores que intervienen</h3>
-    <p>Según cómo esté configurado tu servicio, podemos apoyarnos en herramientas de terceros para comunicaciones, agenda, pagos digitales, enlaces públicos, analítica o almacenamiento —por ejemplo Google Calendar, Google Meet o pasarelas de pago—. Cuando uno de estos proveedores interviene, esa parte de la interacción queda también sujeta a sus condiciones. Puedes consultar la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de Privacidad de Google</a> y sus <a href="https://policies.google.com/terms?hl=es" target="_blank" rel="noopener">Términos</a> cuando resulte aplicable.</p>
+    <p>Este sitio web está alojado en Vercel Inc. y el formulario de evaluación se procesa a través de FormSubmit, ambos con servidores en Estados Unidos; esas transferencias se amparan en el EU–US Data Privacy Framework y, subsidiariamente, en Cláusulas Contractuales Tipo de la Comisión Europea. Además, según cómo esté configurado tu servicio, podemos apoyarnos en herramientas de terceros para comunicaciones, agenda o pagos —por ejemplo Google Calendar, Google Meet o pasarelas de pago—. Cuando uno de estos proveedores interviene, esa parte de la interacción queda también sujeta a sus condiciones. Puedes consultar la <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de Privacidad de Google</a> y sus <a href="https://policies.google.com/terms?hl=es" target="_blank" rel="noopener">Términos</a> cuando resulte aplicable.</p>
 
     <h3>4. Cómo la protegemos</h3>
     <p>Aplicamos medidas razonables de seguridad y limitamos el acceso a la información a lo estrictamente necesario para prestar el servicio. Como norma de sentido común, te pedimos que no compartas por el chat contraseñas, credenciales ni datos financieros sensibles que no hagan falta para tu solicitud. Conservamos la información sólo durante el tiempo razonable para prestar el servicio, mantener la activación, cumplir obligaciones aplicables y dar seguimiento a la implementación.</p>
 
     <h3>5. Tus derechos y cómo ejercerlos</h3>
     <p>Puedes pedirnos en cualquier momento acceder, actualizar, corregir o eliminar la información que nos hayas facilitado por esta vía. Basta con escribirnos por los canales de contacto de la plataforma: ${PHONE_IE} (Irlanda) o ${PHONE_ES} (España).</p>
+
+
+    <h3>6. Cuánto tiempo la conservamos</h3>
+    <p>Las solicitudes de evaluación que llegan por el formulario de esta web se conservan <b>24 meses</b> desde el último contacto, para poder retomar la conversación si vuelves a interesarte, y después se eliminan. Si nos pides antes que las borremos, las borramos. Cuando prestamos servicio a un negocio, el plazo de conservación de las conversaciones de sus clientes lo fija ese negocio en el contrato y se aplica de forma automática.</p>
+
+    <h3>7. Uso de inteligencia artificial</h3>
+    <p>Nuestros asistentes funcionan con sistemas de inteligencia artificial. Cuando hables con uno, se te dirá con claridad al inicio de la conversación que estás hablando con un sistema automatizado y cómo pedir que te atienda una persona, conforme al artículo 50 del Reglamento (UE) 2024/1689 de Inteligencia Artificial. Los asistentes no dan consejo clínico, legal ni financiero, y no toman decisiones automatizadas con efectos jurídicos sobre ti.</p>
+
+    <h3>8. Datos de los clientes de nuestros clientes</h3>
+    <p>Cuando trabajamos con un negocio, los datos de las personas que conversan con su asistente pertenecen a ese negocio, que actúa como responsable del tratamiento. Flowserve AI actúa como <b>encargado del tratamiento</b> y los trata únicamente siguiendo sus instrucciones documentadas, dentro de un contrato de encargo (artículo 28 del RGPD) firmado con cada cliente. Si has hablado con un asistente y quieres ejercer tus derechos, dirígete al negocio con el que contactabas; nosotros le prestamos la asistencia necesaria.</p>
+
+    <h3>9. Reclamaciones</h3>
+    <p>Si consideras que no hemos atendido bien tu solicitud, puedes reclamar ante la autoridad de control competente: la <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">Data Protection Commission</a> en Irlanda o, si resides en España, la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.</p>
 
     <div class="pv-note">Este documento es una base informativa y operativa para el uso de la plataforma. Puede requerir ajustes adicionales según el país, la actividad del negocio, las integraciones activas y la normativa aplicable a tu caso concreto.</div>
   `,
@@ -918,13 +946,26 @@ const PRIVACY = {
     <p>We use that information for a concrete operational purpose: to handle your request, prepare and configure the solution, coordinate assessments and activations, and manage bookings, appointments, orders, payments or campaigns as your case requires. It also lets us keep the service running — confirmations, reminders and follow-up — and improve the quality of service. We don't sell data or use it to train models.</p>
 
     <h3>3. Third parties involved</h3>
-    <p>Depending on how your service is set up, we may rely on third-party tools for communications, scheduling, digital payments, public links, analytics or storage — for example Google Calendar, Google Meet or payment gateways. When one of these providers is involved, that part of the interaction is also subject to their terms. You can review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms</a> where applicable.</p>
+    <p>This website is hosted by Vercel Inc. and the assessment form is processed through FormSubmit, both with servers in the United States; those transfers rely on the EU–US Data Privacy Framework and, as a fallback, on the European Commission’s Standard Contractual Clauses. In addition, depending on how your service is set up, we may rely on third-party tools for communications, scheduling, digital payments, public links, analytics or storage — for example Google Calendar, Google Meet or payment gateways. When one of these providers is involved, that part of the interaction is also subject to their terms. You can review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms</a> where applicable.</p>
 
     <h3>4. How we protect it</h3>
     <p>We apply reasonable security measures and limit access to the information to what's strictly needed to deliver the service. As a matter of common sense, please don't share passwords, credentials or sensitive financial data through the chat unless they're needed for your request. We keep information only for as long as is reasonable to provide the service, maintain the activation, meet applicable obligations and follow up on the implementation.</p>
 
     <h3>5. Your rights and how to exercise them</h3>
     <p>You can ask us at any time to access, update, correct or delete the information you've provided through this channel. Just reach us on the platform's contact lines: ${PHONE_IE} (Ireland) or ${PHONE_ES} (Spain).</p>
+
+
+    <h3>6. How long we keep it</h3>
+    <p>Assessment requests submitted through this website are kept for <b>24 months</b> from the last contact, so we can pick the conversation back up if you get in touch again, and are deleted afterwards. If you ask us to delete them sooner, we do. When we serve a business, the retention period for its customers’ conversations is set by that business in the contract and applied automatically.</p>
+
+    <h3>7. Use of artificial intelligence</h3>
+    <p>Our assistants run on artificial intelligence systems. When you talk to one, you will be told clearly at the start of the conversation that you are speaking with an automated system and how to ask for a human, in line with Article 50 of Regulation (EU) 2024/1689 on Artificial Intelligence. The assistants do not give clinical, legal or financial advice, and make no automated decisions with legal effects on you.</p>
+
+    <h3>8. Data belonging to our clients’ customers</h3>
+    <p>When we work with a business, the data of the people talking to its assistant belongs to that business, which acts as the data controller. Flowserve AI acts as a <b>data processor</b> and handles it solely on their documented instructions, under a data processing agreement (GDPR Article 28) signed with every client. If you spoke to an assistant and want to exercise your rights, contact the business you were reaching out to; we support them in responding.</p>
+
+    <h3>9. Complaints</h3>
+    <p>If you believe we have not handled your request properly, you can complain to the competent supervisory authority: the <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">Data Protection Commission</a> in Ireland or, if you live in Spain, the <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.</p>
 
     <div class="pv-note">This document is an informational and operational baseline for using the platform. It may need further adjustments depending on the country, the nature of the business, active integrations and the regulations applicable to your specific case.</div>
   `
@@ -1030,6 +1071,72 @@ function setLang(l){
 function renderPrivacy(){
   document.getElementById("privacyBody").innerHTML = PRIVACY[LANG];
 }
+const LEGAL = {
+  es:`
+    <div class="pv-meta">
+      <div><b>Titular</b>Flowserve AI, nombre comercial de Javier Ayala</div>
+      <div><b>Contacto Irlanda</b>${PHONE_IE}</div>
+      <div><b>Contacto España</b>${PHONE_ES}</div>
+    </div>
+    <p>Este sitio web es operado por <b>Flowserve AI</b>, nombre comercial bajo el que opera Javier Ayala, con base en Dublín, Irlanda. Flowserve AI se encuentra en proceso de constitución como sociedad en Irlanda; hasta que concluya, el responsable del sitio y de los servicios ofrecidos a través de él es la persona física indicada. Este aviso se actualizará con los datos registrales de la sociedad en cuanto estén disponibles.</p>
+
+    <h3>1. Objeto</h3>
+    <p>Este sitio tiene una finalidad informativa y comercial: presentar los servicios de Flowserve AI y permitir a las empresas interesadas solicitar una evaluación de su caso.</p>
+
+    <h3>2. Estado de las demostraciones</h3>
+    <p>Las páginas de demostración de este sitio son <b>maquetas ilustrativas</b>. Muestran cómo está previsto que funcione el servicio; no son conversaciones reales ni contienen datos de clientes reales, y así aparece indicado en cada una de ellas. Los negocios que aparecen se utilizan como ejemplo y no son clientes de Flowserve AI. Cuando publiquemos casos de clientes, lo haremos con su nombre, sus cifras y su autorización.</p>
+
+    <h3>3. Condiciones de uso</h3>
+    <p>El acceso al sitio es gratuito. El usuario se compromete a hacer un uso lícito del mismo y a no introducir datos falsos o de terceros en los formularios. Flowserve AI puede modificar en cualquier momento el contenido del sitio, los planes y los servicios ofrecidos.</p>
+
+    <h3>4. Propiedad intelectual</h3>
+    <p>Los textos, el diseño, la marca y los elementos gráficos de este sitio son titularidad de Flowserve AI salvo indicación en contrario. No se autoriza su reproducción sin consentimiento previo por escrito.</p>
+
+    <h3>5. Responsabilidad</h3>
+    <p>Flowserve AI no garantiza la disponibilidad ininterrumpida del sitio ni responde de los daños derivados de fallos técnicos ajenos a su control. La información comercial y los precios publicados no constituyen una oferta vinculante: las condiciones concretas de cada servicio se fijan en el contrato firmado con cada cliente.</p>
+
+    <h3>6. Legislación aplicable</h3>
+    <p>Este aviso se rige por la legislación irlandesa. Para cualquier controversia las partes se someten a los juzgados y tribunales de Dublín, sin perjuicio de los derechos que la normativa de consumo reconozca a los usuarios en su país de residencia.</p>
+  `,
+  en:`
+    <div class="pv-meta">
+      <div><b>Operator</b>Flowserve AI, trading name of Javier Ayala</div>
+      <div><b>Ireland</b>${PHONE_IE}</div>
+      <div><b>Spain</b>${PHONE_ES}</div>
+    </div>
+    <p>This website is operated by <b>Flowserve AI</b>, the trading name of Javier Ayala, based in Dublin, Ireland. Flowserve AI is in the process of being incorporated as a company in Ireland; until that completes, the person named above is responsible for the site and the services offered through it. This notice will be updated with the company registration details as soon as they are available.</p>
+
+    <h3>1. Purpose</h3>
+    <p>This site is informational and commercial: it presents Flowserve AI's services and lets interested businesses request an assessment of their case.</p>
+
+    <h3>2. Status of the demos</h3>
+    <p>The demo pages on this site are <b>illustrative mock-ups</b>. They show how the service is intended to work; they are not real conversations and contain no real customer data, and each one says so. The businesses shown are used as examples and are not Flowserve AI clients. When we publish client case studies, we will do so with their name, their figures and their permission.</p>
+
+    <h3>3. Terms of use</h3>
+    <p>Access to the site is free. Users agree to use it lawfully and not to submit false or third-party data through the forms. Flowserve AI may change the site content, plans and services at any time.</p>
+
+    <h3>4. Intellectual property</h3>
+    <p>The text, design, brand and graphics on this site belong to Flowserve AI unless stated otherwise. Reproduction is not permitted without prior written consent.</p>
+
+    <h3>5. Liability</h3>
+    <p>Flowserve AI does not guarantee uninterrupted availability of the site and is not liable for damage arising from technical failures outside its control. Published commercial information and prices are not a binding offer: the specific terms of each service are set out in the contract signed with each client.</p>
+
+    <h3>6. Governing law</h3>
+    <p>This notice is governed by Irish law. Any dispute is subject to the courts of Dublin, without prejudice to consumer rights users may have in their country of residence.</p>
+  `
+};
+
+function openLegal(e){
+  if(e) e.preventDefault();
+  document.getElementById("legalBody").innerHTML = LEGAL[LANG];
+  document.getElementById("legalModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeLegal(){
+  document.getElementById("legalModal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
 function openPrivacy(e){
   if(e) e.preventDefault();
   renderPrivacy();
@@ -1040,7 +1147,7 @@ function closePrivacy(){
   document.getElementById("privacyModal").classList.remove("open");
   document.body.style.overflow = "";
 }
-document.addEventListener("keydown", e=>{ if(e.key==="Escape") closePrivacy(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape"){ closePrivacy(); closeLegal(); } });
 function setIndustry(ind){
   IND = ind;
   document.querySelectorAll(".ind-tab").forEach(t=>t.classList.toggle("on", t.dataset.ind===ind));
