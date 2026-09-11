@@ -1,31 +1,82 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>FlowServe Hospitality - AI para reservas y quejas</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; }
-        h1 { color: #333; margin: 0 0 10px 0; }
-        .breadcrumb { color: #999; font-size: 14px; margin-bottom: 30px; }
-        h2 { color: #d97706; }
-        button { background: #d97706; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #b45309; }
-        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 12px; }
-        a { color: #d97706; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowServe Hostelería — IA para reservas, consultas y quejas</title>
+<meta name="description" content="Responde reservas, consultas y quejas al momento. Para hoteles, hostales y resorts.">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="breadcrumb"><a href="/">← Volver a FlowServe</a></div>
-        <h1>FlowServe Hospitality</h1>
-        <h2>Reservas, quejas, recomendaciones. Atendidas 24/7.</h2>
-        <p>Automático en WhatsApp, SMS, web. Para hoteles, hostales, resorts.</p>
-        <a href="demo.html"><button>Ver demo</button></a>
-        <footer>
-            <p>FlowServe by CareerStrategy Solutions</p>
-        </footer>
+
+<header class="site">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <span class="logo-icon">FS</span>
+      FlowServe
+      <span class="logo-sub" data-es="Hostelería" data-en="Hospitality">Hostelería</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-selector" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="demo.html" class="btn-sm" data-es="Ver demo" data-en="See demo">Ver demo</a>
     </div>
+  </div>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="/">FlowServe</a> ›
+    <span data-es="Hostelería" data-en="Hospitality">Hostelería</span>
+  </nav>
+
+  <section class="hero hero-solo">
+    <div class="hero-content">
+      <h1 class="gradient-text" data-es="Ninguna consulta sin responder, a ninguna hora" data-en="No enquiry left unanswered, at any hour">Ninguna consulta sin responder, a ninguna hora</h1>
+      <p class="subtitle" data-es="Reservas, preguntas frecuentes, recomendaciones locales y quejas atendidas al instante. Para hoteles, hostales y resorts." data-en="Bookings, FAQs, local recommendations and complaints handled instantly. For hotels, hostels and resorts.">Reservas, preguntas frecuentes, recomendaciones locales y quejas atendidas al instante. Para hoteles, hostales y resorts.</p>
+      <div class="hero-cta">
+        <a href="demo.html" class="btn-primary" data-es="Ver demo" data-en="See demo">Ver demo</a>
+        <a href="mailto:hello@flowserve.io?subject=FlowServe%20Hosteleria" class="btn-secondary" data-es="Escribinos" data-en="Get in touch">Escribinos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid">
+      <article class="card card--accent">
+        <span class="card-icon">🛎️</span>
+        <h3 data-es="Reservas y disponibilidad" data-en="Bookings and availability">Reservas y disponibilidad</h3>
+        <p data-es="Responde consultas de disponibilidad y precios al momento, en el idioma del huésped." data-en="Answers availability and pricing enquiries instantly, in the guest's language.">Responde consultas de disponibilidad y precios al momento, en el idioma del huésped.</p>
+      </article>
+      <article class="card card--accent">
+        <span class="card-icon">🗺️</span>
+        <h3 data-es="Recomendaciones locales" data-en="Local recommendations">Recomendaciones locales</h3>
+        <p data-es="Restaurantes, transporte y qué hacer cerca. Sin ocupar a recepción." data-en="Restaurants, transport and things to do nearby. Without tying up the front desk.">Restaurantes, transporte y qué hacer cerca. Sin ocupar a recepción.</p>
+      </article>
+      <article class="card card--accent">
+        <span class="card-icon">⚡</span>
+        <h3 data-es="Quejas antes de la reseña" data-en="Complaints before the review">Quejas antes de la reseña</h3>
+        <p data-es="Detecta al huésped molesto y lo escala a tu equipo antes de que escriba la reseña." data-en="Spots the unhappy guest and escalates to your team before the review gets written.">Detecta al huésped molesto y lo escala a tu equipo antes de que escriba la reseña.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="footer-content">
+    <a href="/" class="back-link">←&nbsp;<span data-es="Volver a FlowServe" data-en="Back to FlowServe">Volver a FlowServe</span></a>
+    <div class="footer-links">
+      <a href="/healthcare/" data-es="Salud" data-en="Healthcare">Salud</a>
+      <a href="/professional-services/" data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</a>
+      <a href="mailto:hello@flowserve.io">Email</a>
+    </div>
+    <p>FlowServe by CareerStrategy Solutions</p>
+    <p class="footer-fine">© 2026 CareerStrategy Solutions</p>
+  </div>
+</footer>
+
+<script src="/i18n.js"></script>
 </body>
 </html>

@@ -1,31 +1,82 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>FlowServe Professional Services - AI para propuestas y soporte</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; }
-        h1 { color: #333; margin: 0 0 10px 0; }
-        .breadcrumb { color: #999; font-size: 14px; margin-bottom: 30px; }
-        h2 { color: #8b5cf6; }
-        button { background: #8b5cf6; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #7c3aed; }
-        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 12px; }
-        a { color: #8b5cf6; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowServe Servicios Profesionales — IA para propuestas y clientes</title>
+<meta name="description" content="Propuestas, onboarding de clientes y soporte automatizados. Para consultores, estudios y agencias.">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="breadcrumb"><a href="/">← Volver a FlowServe</a></div>
-        <h1>FlowServe Professional Services</h1>
-        <h2>Propuestas, clientes, soporte. Para consultores y agencias.</h2>
-        <p>Responde preguntas sobre tu expertise. Califica leads automáticamente.</p>
-        <a href="demo.html"><button>Ver demo</button></a>
-        <footer>
-            <p>FlowServe by CareerStrategy Solutions</p>
-        </footer>
+
+<header class="site">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <span class="logo-icon">FS</span>
+      FlowServe
+      <span class="logo-sub" data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-selector" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="demo.html" class="btn-sm" data-es="Ver demo" data-en="See demo">Ver demo</a>
     </div>
+  </div>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="/">FlowServe</a> ›
+    <span data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</span>
+  </nav>
+
+  <section class="hero hero-solo">
+    <div class="hero-content">
+      <h1 class="gradient-text" data-es="Menos admin, más trabajo facturable" data-en="Less admin, more billable work">Menos admin, más trabajo facturable</h1>
+      <p class="subtitle" data-es="Califica leads, arma propuestas, hace el onboarding y responde al cliente. Para consultores, estudios y agencias." data-en="Qualifies leads, drafts proposals, runs onboarding and answers clients. For consultants, firms and agencies.">Califica leads, arma propuestas, hace el onboarding y responde al cliente. Para consultores, estudios y agencias.</p>
+      <div class="hero-cta">
+        <a href="demo.html" class="btn-primary" data-es="Ver demo" data-en="See demo">Ver demo</a>
+        <a href="mailto:hello@flowserve.io?subject=FlowServe%20Servicios%20Profesionales" class="btn-secondary" data-es="Escribinos" data-en="Get in touch">Escribinos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid">
+      <article class="card card--accent">
+        <span class="card-icon">🎯</span>
+        <h3 data-es="Calificación de leads" data-en="Lead qualification">Calificación de leads</h3>
+        <p data-es="Hace las preguntas de siempre y te pasa solo los que valen tu tiempo." data-en="Asks the usual questions and passes you only the ones worth your time.">Hace las preguntas de siempre y te pasa solo los que valen tu tiempo.</p>
+      </article>
+      <article class="card card--accent">
+        <span class="card-icon">📄</span>
+        <h3 data-es="Propuestas y seguimiento" data-en="Proposals and follow-up">Propuestas y seguimiento</h3>
+        <p data-es="Borrador de propuesta con tus plantillas y recordatorio automático si no hay respuesta." data-en="Proposal drafts from your templates and automatic nudges when there's no reply.">Borrador de propuesta con tus plantillas y recordatorio automático si no hay respuesta.</p>
+      </article>
+      <article class="card card--accent">
+        <span class="card-icon">🤝</span>
+        <h3 data-es="Onboarding y soporte" data-en="Onboarding and support">Onboarding y soporte</h3>
+        <p data-es="Recoge documentos, agenda el kick-off y responde las dudas repetidas del cliente." data-en="Collects documents, schedules the kick-off and answers the client's repeat questions.">Recoge documentos, agenda el kick-off y responde las dudas repetidas del cliente.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="footer-content">
+    <a href="/" class="back-link">←&nbsp;<span data-es="Volver a FlowServe" data-en="Back to FlowServe">Volver a FlowServe</span></a>
+    <div class="footer-links">
+      <a href="/healthcare/" data-es="Salud" data-en="Healthcare">Salud</a>
+      <a href="/hospitality/" data-es="Hostelería" data-en="Hospitality">Hostelería</a>
+      <a href="mailto:hello@flowserve.io">Email</a>
+    </div>
+    <p>FlowServe by CareerStrategy Solutions</p>
+    <p class="footer-fine">© 2026 CareerStrategy Solutions</p>
+  </div>
+</footer>
+
+<script src="/i18n.js"></script>
 </body>
 </html>

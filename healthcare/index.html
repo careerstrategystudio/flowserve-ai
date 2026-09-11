@@ -1,31 +1,116 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>FlowServe Healthcare - AI para citas y consultas</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; }
-        h1 { color: #333; margin: 0 0 10px 0; }
-        .breadcrumb { color: #999; font-size: 14px; margin-bottom: 30px; }
-        h2 { color: #10b981; }
-        button { background: #10b981; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background: #059669; }
-        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 12px; }
-        a { color: #10b981; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowServe Salud — IA para home care, clínicas y centros de salud</title>
+<meta name="description" content="Automatización con IA para el sector salud en Irlanda. Home care es nuestra especialidad: turnos, familias y compliance HSE.">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="breadcrumb"><a href="/">← Volver a FlowServe</a></div>
-        <h1>FlowServe Healthcare</h1>
-        <h2>Citas, consultas, seguimiento. Para clínicas y centros de salud.</h2>
-        <p>Integrado con tu agenda. GDPR compliant. Recordatorios automáticos.</p>
-        <a href="demo.html"><button>Ver demo</button></a>
-        <footer>
-            <p>FlowServe by CareerStrategy Solutions</p>
-        </footer>
+
+<header class="site">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <span class="logo-icon">FS</span>
+      FlowServe
+      <span class="logo-sub" data-es="Salud" data-en="Healthcare">Salud</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-selector" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="/healthcare/homecare/" class="btn-sm" data-es="Ver CareFlow" data-en="See CareFlow">Ver CareFlow</a>
     </div>
+  </div>
+</header>
+
+<main>
+
+  <nav class="breadcrumb">
+    <a href="/">FlowServe</a> ›
+    <span data-es="Salud" data-en="Healthcare">Salud</span>
+  </nav>
+
+  <section class="hero hero-solo">
+    <div class="hero-content">
+      <h1 class="gradient-text" data-es="IA que se ocupa de la coordinación, para que tu equipo se ocupe del cuidado" data-en="AI that handles coordination, so your team can handle care">IA que se ocupa de la coordinación, para que tu equipo se ocupe del cuidado</h1>
+      <p class="subtitle" data-es="Turnos, comunicación con familias y pacientes, recordatorios y documentación. Para organizaciones de salud en Irlanda." data-en="Shifts, family and patient communication, reminders and documentation. For healthcare organisations in Ireland.">Turnos, comunicación con familias y pacientes, recordatorios y documentación. Para organizaciones de salud en Irlanda.</p>
+    </div>
+  </section>
+
+  <section class="featured">
+    <span class="badge" data-es="Nuestra especialidad" data-en="Our specialty">Nuestra especialidad</span>
+    <h2 class="gradient-text" data-es="CareFlow — para agencias de Home Care" data-en="CareFlow — for Home Care agencies">CareFlow — para agencias de Home Care</h2>
+    <p data-es="Turnos cubiertos en minutos, familias siempre informadas y compliance HSE automático. Construido con agencias de Dublín, para agencias de Dublín." data-en="Shifts covered in minutes, families always informed and automatic HSE compliance. Built with Dublin agencies, for Dublin agencies.">Turnos cubiertos en minutos, familias siempre informadas y compliance HSE automático. Construido con agencias de Dublín, para agencias de Dublín.</p>
+    <a href="/healthcare/homecare/" class="btn-primary" data-es="Ver CareFlow →" data-en="See CareFlow →">Ver CareFlow →</a>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2 data-es="Qué resolvemos en salud" data-en="What we solve in healthcare">Qué resolvemos en salud</h2>
+      <p data-es="Los mismos cuellos de botella, adaptados a cada tipo de organización." data-en="The same bottlenecks, adapted to each type of organisation.">Los mismos cuellos de botella, adaptados a cada tipo de organización.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card card--accent">
+        <span class="card-icon">🏠</span>
+        <h3 data-es="Agencias de Home Care" data-en="Home Care agencies">Agencias de Home Care</h3>
+        <p data-es="Cobertura de turnos de último minuto, portal de familias y registro automático de visitas para la HSE." data-en="Last-minute shift cover, family portal and automatic visit logging for the HSE.">Cobertura de turnos de último minuto, portal de familias y registro automático de visitas para la HSE.</p>
+        <div class="card-details">
+          <span class="check" data-es="Producto listo: CareFlow" data-en="Product ready: CareFlow">Producto listo: CareFlow</span>
+          <span class="check" data-es="Desde €100 al mes" data-en="From €100 per month">Desde €100 al mes</span>
+        </div>
+      </article>
+
+      <article class="card card--accent">
+        <span class="card-icon">🏥</span>
+        <h3 data-es="Clínicas y consultorios" data-en="Clinics and practices">Clínicas y consultorios</h3>
+        <p data-es="Gestión de citas, recordatorios y seguimiento de pacientes conectado a tu agenda. Cumple GDPR." data-en="Appointment handling, reminders and patient follow-up connected to your calendar. GDPR compliant.">Gestión de citas, recordatorios y seguimiento de pacientes conectado a tu agenda. Cumple GDPR.</p>
+        <div class="card-details">
+          <span class="check" data-es="Reduce ausencias a consulta" data-en="Cuts down no-shows">Reduce ausencias a consulta</span>
+          <span class="check" data-es="Integrado con tu agenda" data-en="Integrated with your calendar">Integrado con tu agenda</span>
+        </div>
+      </article>
+
+      <article class="card card--accent">
+        <span class="card-icon">🧑‍⚕️</span>
+        <h3 data-es="Residencias y centros" data-en="Nursing homes and centres">Residencias y centros</h3>
+        <p data-es="Handovers entre turnos, comunicación con familiares y documentación lista para auditoría." data-en="Shift handovers, family communication and audit-ready documentation.">Handovers entre turnos, comunicación con familiares y documentación lista para auditoría.</p>
+        <div class="card-details">
+          <span class="check" data-es="Continuidad entre turnos" data-en="Continuity between shifts">Continuidad entre turnos</span>
+          <span class="check" data-es="Reportes en un clic" data-en="Reports in one click">Reportes en un clic</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2 class="gradient-text" data-es="¿Tu organización es de salud pero no encaja en ninguna?" data-en="Healthcare organisation that doesn't fit any of these?">¿Tu organización es de salud pero no encaja en ninguna?</h2>
+    <p data-es="Contanos qué te está costando tiempo y vemos si tiene solución. Sin compromiso." data-en="Tell us what's eating your time and we'll see if it can be solved. No strings attached.">Contanos qué te está costando tiempo y vemos si tiene solución. Sin compromiso.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="mailto:hello@flowserve.io?subject=FlowServe%20Salud" class="btn-primary" data-es="Escribinos" data-en="Get in touch">Escribinos</a>
+      <a href="demo.html" class="btn-secondary" data-es="Ver demo" data-en="See demo">Ver demo</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="footer-content">
+    <a href="/" class="back-link">←&nbsp;<span data-es="Volver a FlowServe" data-en="Back to FlowServe">Volver a FlowServe</span></a>
+    <div class="footer-links">
+      <a href="/healthcare/homecare/">CareFlow</a>
+      <a href="/hospitality/" data-es="Hostelería" data-en="Hospitality">Hostelería</a>
+      <a href="/professional-services/" data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</a>
+      <a href="mailto:hello@flowserve.io">Email</a>
+    </div>
+    <p>FlowServe by CareerStrategy Solutions</p>
+    <p class="footer-fine">© 2026 CareerStrategy Solutions</p>
+  </div>
+</footer>
+
+<script src="/i18n.js"></script>
 </body>
 </html>
