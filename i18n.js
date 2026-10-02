@@ -14,7 +14,7 @@
 
   var STORAGE_KEY = 'flowserve-lang';
   var SUPPORTED = ['es', 'en'];
-  var DEFAULT = 'es';
+  var DEFAULT = 'en';
 
   var ATTR_MAP = {
     placeholder: 'placeholder',

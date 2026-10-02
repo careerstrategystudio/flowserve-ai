@@ -1,102 +1,201 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FlowServe — Automatización con IA para tu operación</title>
-<meta name="description" content="IA que se ocupa de la coordinación operativa: turnos, clientes y documentación. Especialistas en home care en Irlanda.">
+<title>FlowServe — Fewer no-shows for appointment businesses in Ireland</title>
+<meta name="description" content="An automated front desk for salons, clinics and studios in Ireland: deposits, reminders, cancellations and waitlist. Free 30-day pilot." data-en-content="An automated front desk for salons, clinics and studios in Ireland: deposits, reminders, cancellations and waitlist. Free 30-day pilot." data-es-content="Una recepción automática para salones, clínicas y estudios en Irlanda: señal, recordatorios, cancelaciones y lista de espera. Piloto gratis de 30 días.">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-
 <header class="site">
   <div class="header-content">
     <a href="/" class="logo">
       <span class="logo-icon">FS</span>
       FlowServe
+      <span class="logo-sub" data-en="Front desk on autopilot" data-es="Recepción en piloto automático">Front desk on autopilot</span>
     </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
+      <a href="/home-services/" data-en="Home Services" data-es="Servicios del Hogar">Home Services</a>
+      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+    </nav>
     <div class="nav-right">
-      <div class="lang-selector" role="group" aria-label="Idioma / Language">
-        <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-selector" role="group" aria-label="Language / Idioma">
+        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <a href="#industrias" class="btn-sm" data-es="Ver industrias" data-en="See industries">Ver industrias</a>
+      <a href="/pilot/" class="btn-sm" data-en="Try it free" data-es="Pruébalo gratis">Try it free</a>
     </div>
   </div>
 </header>
-
 <main>
 
-  <section class="hero hero-solo">
-    <div class="hero-content">
-      <h1 class="gradient-text" data-es="La coordinación operativa, en piloto automático" data-en="Operational coordination, on autopilot">La coordinación operativa, en piloto automático</h1>
-      <p class="subtitle" data-es="FlowServe automatiza lo que te come el día: cubrir turnos, responder a clientes y familias, mandar recordatorios y dejar todo documentado. Una plataforma, adaptada a tu industria." data-en="FlowServe automates what eats your day: covering shifts, replying to clients and families, sending reminders and keeping everything documented. One platform, adapted to your industry.">FlowServe automatiza lo que te come el día: cubrir turnos, responder a clientes y familias, mandar recordatorios y dejar todo documentado. Una plataforma, adaptada a tu industria.</p>
-      <div class="hero-cta">
-        <a href="/healthcare/homecare/" class="btn-primary" data-es="Soy agencia de home care" data-en="I run a home care agency">Soy agencia de home care</a>
-        <a href="#industrias" class="btn-secondary" data-es="Otra industria" data-en="Another industry">Otra industria</a>
+<section class="hero">
+  <div class="hero-content">
+    <span class="eyebrow" data-en="For appointment businesses in Ireland" data-es="Para negocios con cita en Irlanda">For appointment businesses in Ireland</span>
+    <h1 class="gradient-text" data-en="Fewer no-shows. A fuller diary. No extra receptionist." data-es="Menos ausencias. Más agenda llena. Sin contratar recepcionista.">Fewer no-shows. A fuller diary. No extra receptionist.</h1>
+    <p class="subtitle" data-en="FlowServe takes the deposit, sends the reminders, handles cancellations and fills the gap from your waiting list — automatically, on the tools you already use. We set it up for you." data-es="FlowServe cobra la señal, manda los recordatorios, gestiona las cancelaciones y rellena el hueco con tu lista de espera — solo, con las herramientas que ya usas. Nosotros lo montamos.">FlowServe takes the deposit, sends the reminders, handles cancellations and fills the gap from your waiting list — automatically, on the tools you already use. We set it up for you.</p>
+    <div class="hero-cta">
+      <a href="/pilot/" class="btn-primary" data-en="Start a free 30-day pilot" data-es="Empieza un piloto gratis de 30 días">Start a free 30-day pilot</a>
+      <a href="#how" class="btn-secondary" data-en="See how it works" data-es="Mira cómo funciona">See how it works</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="flow-diagram">
+      <div class="flow-step"><div class="flow-icon">📅</div><div class="flow-text"><strong data-en="Client books online" data-es="El cliente reserva online">Client books online</strong><small data-en="Calendly or Google Calendar" data-es="Calendly o Google Calendar">Calendly or Google Calendar</small></div></div>
+      <div class="flow-step"><div class="flow-icon">💶</div><div class="flow-text"><strong data-en="€20 deposit requested" data-es="Se pide la señal de €20">€20 deposit requested</strong><small data-en="Payment link sent instantly" data-es="Link de pago al momento">Payment link sent instantly</small></div></div>
+      <div class="flow-step"><div class="flow-icon">⏰</div><div class="flow-text"><strong data-en="Reminder 24h before" data-es="Recordatorio 24h antes">Reminder 24h before</strong><small data-en="Confirm or cancel in one click" data-es="Confirma o cancela con un clic">Confirm or cancel in one click</small></div></div>
+      <div class="flow-step"><div class="flow-icon">🔁</div><div class="flow-text"><strong data-en="Slot freed? Waitlist notified" data-es="¿Hueco libre? Aviso a la lista de espera">Slot freed? Waitlist notified</strong><small data-en="The gap gets filled" data-es="El hueco se rellena">The gap gets filled</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cost">
+  <div class="section-header">
+    <h2 data-en="What are no-shows costing you?" data-es="¿Cuánto te cuestan las ausencias?">What are no-shows costing you?</h2>
+    <p data-en="Put in your own numbers. It takes ten seconds." data-es="Pon tus propios números. Tardas diez segundos.">Put in your own numbers. It takes ten seconds.</p>
+  </div>
+  <div class="calc">
+    <div>
+      <label for="c-price" data-en="Average price per appointment (€)" data-es="Precio medio por cita (€)">Average price per appointment (€)</label>
+      <input id="c-price" type="number" min="0" value="60" inputmode="decimal">
+      <label for="c-ns" data-en="No-shows or late cancellations per week" data-es="Ausencias o cancelaciones tardías por semana">No-shows or late cancellations per week</label>
+      <input id="c-ns" type="number" min="0" value="3" inputmode="numeric">
+    </div>
+    <div class="calc-out" aria-live="polite">
+      <div class="big" id="c-out">€780</div>
+      <p data-en="lost every month" data-es="perdidos cada mes">lost every month</p>
+      <p class="fine" data-en="A €149/month front desk pays for itself after three saved appointments." data-es="Una recepción de €149/mes se paga sola con tres citas salvadas.">A €149/month front desk pays for itself after three saved appointments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="section-header">
+    <h2 data-en="How it works" data-es="Cómo funciona">How it works</h2>
+    <p data-en="Five things your front desk should do every day — now done for you." data-es="Cinco cosas que tu recepción debería hacer cada día — ahora se hacen solas.">Five things your front desk should do every day — now done for you.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><h3 data-en="Deposit at booking" data-es="Señal al reservar">Deposit at booking</h3><p data-en="Every new booking gets an email with your payment link. No deposit, no slot." data-es="Cada reserva nueva recibe un email con tu link de pago. Sin señal no hay hora.">Every new booking gets an email with your payment link. No deposit, no slot.</p></div>
+    <div class="step"><h3 data-en="Reminder 24h before" data-es="Recordatorio 24h antes">Reminder 24h before</h3><p data-en="Clients confirm or cancel with one click, so you know where you stand." data-es="El cliente confirma o cancela con un clic, y tú sabes a qué atenerte.">Clients confirm or cancel with one click, so you know where you stand.</p></div>
+    <div class="step"><h3 data-en="Cancellations handled" data-es="Cancelaciones gestionadas">Cancellations handled</h3><p data-en="Your cancellation policy applied the same way every time. You get notified." data-es="Tu política de cancelación aplicada siempre igual. Tú recibes el aviso.">Your cancellation policy applied the same way every time. You get notified.</p></div>
+    <div class="step"><h3 data-en="Waitlist fills the gap" data-es="La lista de espera rellena el hueco">Waitlist fills the gap</h3><p data-en="When a slot frees up, people on your waiting list hear about it straight away." data-es="Cuando se libera una hora, tu lista de espera se entera al instante.">When a slot frees up, people on your waiting list hear about it straight away.</p></div>
+    <div class="step"><h3 data-en="Balance and daily summary" data-es="Cobro del resto y resumen diario">Balance and daily summary</h3><p data-en="The balance request goes out before the session, and you get a summary every morning." data-es="La petición del resto sale antes de la sesión, y tú recibes un resumen cada mañana.">The balance request goes out before the session, and you get a summary every morning.</p></div>
+  </div>
+</section>
+
+<section class="section" id="case">
+  <div class="case">
+    <div>
+      <span class="live-dot" data-en="Live now" data-es="Funcionando ya">Live now</span>
+      <h3 data-en="Javier Ayala Massage, Dublin" data-es="Javier Ayala Massage, Dublín">Javier Ayala Massage, Dublin</h3>
+      <p data-en="Our first live pilot is our founder’s own massage practice. Every booking runs through FlowServe: €20 deposit, reminders, cancellation policy, waitlist and balance request before the session. We test everything on ourselves before we offer it to you." data-es="Nuestro primer piloto en vivo es el estudio de masajes de nuestro fundador. Cada reserva pasa por FlowServe: señal de €20, recordatorios, política de cancelación, lista de espera y cobro del resto antes de la sesión. Lo probamos todo en casa antes de ofrecértelo.">Our first live pilot is our founder’s own massage practice. Every booking runs through FlowServe: €20 deposit, reminders, cancellation policy, waitlist and balance request before the session. We test everything on ourselves before we offer it to you.</p>
+      <a href="https://javierayalamassage.netlify.app/" target="_blank" rel="noopener" class="btn-secondary" data-en="See the live booking page" data-es="Ver la web de reservas en vivo">See the live booking page</a>
+    </div>
+    <div class="mail-mock" aria-label="Example email">
+      <div class="mm-head"><b>Reminder: your session tomorrow at 17:00</b><br>to: client · from: Javier Ayala Massage</div>
+      Hi Sarah,<br>Just a reminder of your <b>Back Massage</b> tomorrow, Monday 28 September at 17:00.<br>Please let me know if you can make it:
+      <div class="mm-btns"><span class="mm-btn">Confirm</span><span class="mm-btn alt">Cancel</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="who">
+  <div class="section-header">
+    <h2 data-en="Who it’s for" data-es="Para quién es">Who it’s for</h2>
+    <p data-en="We focus on businesses that live and die by their diary." data-es="Nos centramos en negocios que viven de su agenda.">We focus on businesses that live and die by their diary.</p>
+  </div>
+  <div class="grid">
+    <a href="/beauty-wellness/" class="card card--accent">
+      <span class="tag-now" data-en="Available now" data-es="Disponible ya">Available now</span>
+      <span class="card-icon">💆</span>
+      <h3 data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</h3>
+      <p data-en="Salons, aesthetic clinics, massage, physio, nails, brows and lashes, yoga and pilates studios." data-es="Salones, clínicas estéticas, masaje, fisio, uñas, cejas y pestañas, estudios de yoga y pilates.">Salons, aesthetic clinics, massage, physio, nails, brows and lashes, yoga and pilates studios.</p>
+    </a>
+    <a href="/home-services/" class="card">
+      <span class="tag-soon" data-en="Early access" data-es="Acceso anticipado">Early access</span>
+      <span class="card-icon">🔧</span>
+      <h3 data-en="Home Services" data-es="Servicios del Hogar">Home Services</h3>
+      <p data-en="Plumbers, electricians, heat pump and retrofit installers who lose jobs to missed calls." data-es="Fontaneros, electricistas e instaladores de bombas de calor y reformas que pierden trabajos por llamadas perdidas.">Plumbers, electricians, heat pump and retrofit installers who lose jobs to missed calls.</p>
+    </a>
+    <a href="/healthcare/homecare/" class="card">
+      <span class="tag-soon" data-en="In development" data-es="En desarrollo">In development</span>
+      <span class="card-icon">🏠</span>
+      <h3 data-en="Home care agencies" data-es="Agencias de home care">Home care agencies</h3>
+      <p data-en="Shift filling and family updates for private home care providers. Opening once HIQA registration rules are in force." data-es="Cobertura de turnos y avisos a familias para agencias privadas de home care. Abrimos cuando entren en vigor las normas de registro de HIQA.">Shift filling and family updates for private home care providers. Opening once HIQA registration rules are in force.</p>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="section-header">
+    <h2 data-en="One simple plan" data-es="Un solo plan, sin letra pequeña">One simple plan</h2>
+    <p data-en="Try it for a month. Keep it only if it works." data-es="Pruébalo un mes. Quédatelo solo si te funciona.">Try it for a month. Keep it only if it works.</p>
+  </div>
+  <div class="offer">
+    <div class="price-card featured-plan">
+      <h3 data-en="Front Desk" data-es="Recepción">Front Desk</h3>
+      <span class="tier-size" data-en="For one business location" data-es="Para un local">For one business location</span>
+      <div class="price">€149</div>
+      <span class="price-period" data-en="per month, from month 2" data-es="al mes, a partir del segundo mes">per month, from month 2</span>
+      <p class="free" data-en="First 30 days free · No setup fee for our first 5 businesses" data-es="Primeros 30 días gratis · Sin coste de montaje para los 5 primeros negocios">First 30 days free · No setup fee for our first 5 businesses</p>
+      <div class="price-features">
+        <span class="check" data-en="Deposit request at every booking" data-es="Petición de señal en cada reserva">Deposit request at every booking</span>
+        <span class="check" data-en="24h reminders with confirm / cancel buttons" data-es="Recordatorios 24h con botones confirmar / cancelar">24h reminders with confirm / cancel buttons</span>
+        <span class="check" data-en="Cancellation policy applied automatically" data-es="Política de cancelación aplicada sola">Cancellation policy applied automatically</span>
+        <span class="check" data-en="Waitlist alerts when a slot frees up" data-es="Avisos a la lista de espera cuando se libera una hora">Waitlist alerts when a slot frees up</span>
+        <span class="check" data-en="Balance request before the session" data-es="Cobro del resto antes de la sesión">Balance request before the session</span>
+        <span class="check" data-en="Client list and daily summary in a simple spreadsheet" data-es="Lista de clientes y resumen diario en una hoja sencilla">Client list and daily summary in a simple spreadsheet</span>
+        <span class="check" data-en="Set up and maintained by us. Cancel any time." data-es="Lo montamos y mantenemos nosotros. Cancelas cuando quieras.">Set up and maintained by us. Cancel any time.</span>
       </div>
+      <a href="/pilot/" class="btn-primary" data-en="Start the free pilot" data-es="Empezar el piloto gratis">Start the free pilot</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="featured">
-    <span class="badge" data-es="Foco actual" data-en="Current focus">Foco actual</span>
-    <h2 class="gradient-text" data-es="Home Care: turnos cubiertos en minutos" data-en="Home Care: shifts covered in minutes">Home Care: turnos cubiertos en minutos</h2>
-    <p data-es="Para agencias de home care en Irlanda. Familias siempre informadas, compliance HSE automático y cero WhatsApp caótico. Desde €100 al mes." data-en="For home care agencies in Ireland. Families always informed, automatic HSE compliance and zero WhatsApp chaos. From €100 per month.">Para agencias de home care en Irlanda. Familias siempre informadas, compliance HSE automático y cero WhatsApp caótico. Desde €100 al mes.</p>
-    <a href="/healthcare/homecare/" class="btn-primary" data-es="Conocé CareFlow →" data-en="Discover CareFlow →">Conocé CareFlow →</a>
-  </section>
+<section class="section" id="faq">
+  <div class="section-header"><h2 data-en="Questions owners ask us" data-es="Lo que nos preguntan los dueños">Questions owners ask us</h2></div>
+  <div class="faq">
+<details><summary data-en="Do I need to change my booking software?" data-es="¿Tengo que cambiar mi programa de reservas?">Do I need to change my booking software?</summary><p data-en="No. FlowServe works with Calendly and Google Calendar today. If you use something else, tell us and we’ll check before you commit to anything." data-es="No. Hoy FlowServe funciona con Calendly y Google Calendar. Si usas otro, dínoslo y lo revisamos antes de que te comprometas a nada.">No. FlowServe works with Calendly and Google Calendar today. If you use something else, tell us and we’ll check before you commit to anything.</p></details>
+<details><summary data-en="How do clients pay the deposit?" data-es="¿Cómo paga el cliente la señal?">How do clients pay the deposit?</summary><p data-en="Through your own payment link (Revolut, Stripe or similar). The money goes straight to you — we never touch it." data-es="Con tu propio link de pago (Revolut, Stripe o similar). El dinero te llega directo a ti — nosotros nunca lo tocamos.">Through your own payment link (Revolut, Stripe or similar). The money goes straight to you — we never touch it.</p></details>
+<details><summary data-en="What happens after the 30 days?" data-es="¿Qué pasa después de los 30 días?">What happens after the 30 days?</summary><p data-en="We sit down with the numbers: no-shows before and after. If it worked, you continue at €149/month. If not, we switch it off and hand you back your data. No contract to break." data-es="Nos sentamos con los números: ausencias antes y después. Si funcionó, sigues por €149/mes. Si no, lo apagamos y te devolvemos tus datos. Sin contrato que romper.">We sit down with the numbers: no-shows before and after. If it worked, you continue at €149/month. If not, we switch it off and hand you back your data. No contract to break.</p></details>
+<details><summary data-en="Is my clients’ data safe?" data-es="¿Están seguros los datos de mis clientes?">Is my clients’ data safe?</summary><p data-en="Your client data stays in your own Google account. We act as your data processor under a written GDPR agreement, and we don’t sell data or use it to train AI models." data-es="Los datos de tus clientes se quedan en tu propia cuenta de Google. Actuamos como encargados del tratamiento con un acuerdo RGPD por escrito, y no vendemos datos ni los usamos para entrenar IA.">Your client data stays in your own Google account. We act as your data processor under a written GDPR agreement, and we don’t sell data or use it to train AI models.</p></details>
+<details><summary data-en="Who writes the messages?" data-es="¿Quién escribe los mensajes?">Who writes the messages?</summary><p data-en="We write them with you, in your tone, and you approve them before anything goes out. They are sent from your business, not from us." data-es="Los escribimos contigo, con tu tono, y tú los apruebas antes de que salga nada. Se envían desde tu negocio, no desde nosotros.">We write them with you, in your tone, and you approve them before anything goes out. They are sent from your business, not from us.</p></details>
+  </div>
+</section>
 
-  <section class="section" id="industrias">
-    <div class="section-header">
-      <h2 data-es="Elegí tu industria" data-en="Pick your industry">Elegí tu industria</h2>
-      <p data-es="El mismo motor, entrenado para el vocabulario y los procesos de cada sector." data-en="The same engine, trained on each sector's vocabulary and processes.">El mismo motor, entrenado para el vocabulario y los procesos de cada sector.</p>
-    </div>
-
-    <div class="grid">
-      <a href="/healthcare/" class="card card--accent">
-        <span class="card-icon">🏥</span>
-        <h3 data-es="Salud" data-en="Healthcare">Salud</h3>
-        <p data-es="Home care, clínicas y residencias. Turnos, familias, pacientes y documentación para la HSE." data-en="Home care, clinics and nursing homes. Shifts, families, patients and HSE documentation.">Home care, clínicas y residencias. Turnos, familias, pacientes y documentación para la HSE.</p>
-        <div class="card-details">
-          <span class="check" data-es="Incluye CareFlow para home care" data-en="Includes CareFlow for home care">Incluye CareFlow para home care</span>
-        </div>
-      </a>
-
-      <a href="/hospitality/" class="card">
-        <span class="card-icon">🏨</span>
-        <h3 data-es="Hostelería" data-en="Hospitality">Hostelería</h3>
-        <p data-es="Reservas, consultas y quejas respondidas al momento. Para hoteles, hostales y resorts." data-en="Bookings, enquiries and complaints answered instantly. For hotels, hostels and resorts.">Reservas, consultas y quejas respondidas al momento. Para hoteles, hostales y resorts.</p>
-      </a>
-
-      <a href="/professional-services/" class="card">
-        <span class="card-icon">💼</span>
-        <h3 data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</h3>
-        <p data-es="Propuestas, onboarding de clientes y soporte. Para consultores, estudios y agencias." data-en="Proposals, client onboarding and support. For consultants, firms and agencies.">Propuestas, onboarding de clientes y soporte. Para consultores, estudios y agencias.</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="cta-section">
-    <h2 class="gradient-text" data-es="¿No sabés por dónde empezar?" data-en="Not sure where to start?">¿No sabés por dónde empezar?</h2>
-    <p data-es="Contanos qué proceso te está costando más tiempo esta semana y te decimos si se puede automatizar." data-en="Tell us which process is costing you the most time this week and we'll tell you if it can be automated.">Contanos qué proceso te está costando más tiempo esta semana y te decimos si se puede automatizar.</p>
-    <a href="mailto:hello@flowserve.io?subject=FlowServe" class="btn-primary" data-es="Escribinos" data-en="Get in touch">Escribinos</a>
-  </section>
-
+<section class="cta-section">
+  <h2 class="gradient-text" data-en="Want to see it running in your business?" data-es="¿Quieres verlo funcionando en tu negocio?">Want to see it running in your business?</h2>
+  <p data-en="A 15-minute chat, set-up within three days, and a month to judge it on real numbers." data-es="Una charla de 15 minutos, montaje en tres días y un mes para juzgarlo con números reales.">A 15-minute chat, set-up within three days, and a month to judge it on real numbers.</p>
+  <a href="/pilot/" class="btn-primary" data-en="See the pilot terms" data-es="Ver las condiciones del piloto">See the pilot terms</a>
+</section>
 </main>
-
+<script>
+(function () {
+  var p = document.getElementById('c-price'), n = document.getElementById('c-ns'), o = document.getElementById('c-out');
+  function calc() {
+    var v = Math.max(0, parseFloat(p.value) || 0) * Math.max(0, parseFloat(n.value) || 0) * 52 / 12;
+    o.textContent = '€' + Math.round(v).toLocaleString('en-IE');
+  }
+  p.addEventListener('input', calc); n.addEventListener('input', calc); calc();
+})();
+</script>
 <footer class="site">
   <div class="footer-content">
     <div class="footer-links">
-      <a href="/healthcare/homecare/">CareFlow</a>
-      <a href="/healthcare/" data-es="Salud" data-en="Healthcare">Salud</a>
-      <a href="/hospitality/" data-es="Hostelería" data-en="Hospitality">Hostelería</a>
-      <a href="/professional-services/" data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</a>
-      <a href="mailto:hello@flowserve.io">Email</a>
+      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
+      <a href="/home-services/" data-en="Home Services" data-es="Servicios del Hogar">Home Services</a>
+      <a href="/healthcare/homecare/" data-en="Home care agencies" data-es="Agencias de home care">Home care agencies</a>
+      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+      <a href="/privacy/" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a href="mailto:javierignacioayala@gmail.com">Email</a>
     </div>
-    <p>FlowServe by CareerStrategy Solutions</p>
-    <p class="footer-fine" data-es="© 2026 CareerStrategy Solutions. Dublín, Irlanda." data-en="© 2026 CareerStrategy Solutions. Dublin, Ireland.">© 2026 CareerStrategy Solutions. Dublín, Irlanda.</p>
+    <p data-en="FlowServe — Dublin, Ireland" data-es="FlowServe — Dublín, Irlanda">FlowServe — Dublin, Ireland</p>
+    <p class="footer-fine" data-en="FlowServe is a trading name of Javier Ayala (company in formation). © 2026" data-es="FlowServe es el nombre comercial de Javier Ayala (sociedad en constitución). © 2026">FlowServe is a trading name of Javier Ayala (company in formation). © 2026</p>
   </div>
 </footer>
-
+<a class="wa-float" href="https://wa.me/353876071214?text=Hi%20Javier%2C%20I%27d%20like%20to%20know%20more%20about%20the%20FlowServe%20free%20pilot" target="_blank" rel="noopener" data-en="WhatsApp us" data-es="Escríbenos por WhatsApp">WhatsApp us</a>
 <script src="/i18n.js"></script>
 </body>
 </html>
