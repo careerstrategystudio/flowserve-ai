@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FlowServe — Fewer no-shows for appointment businesses in Ireland</title>
 <meta name="description" content="An automated front desk for salons, clinics and studios in Ireland: deposits, reminders, cancellations and waitlist. Free 30-day pilot." data-en-content="An automated front desk for salons, clinics and studios in Ireland: deposits, reminders, cancellations and waitlist. Free 30-day pilot." data-es-content="Una recepción automática para salones, clínicas y estudios en Irlanda: señal, recordatorios, cancelaciones y lista de espera. Piloto gratis de 30 días.">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <header class="site">
   <div class="header-content">
     <a href="/" class="logo">
-      <span class="logo-icon">FS</span>
+      <img class="logo-mark" src="/assets/brand/logo-mark.svg" alt="" width="28" height="28">
       FlowServe
       <span class="logo-sub" data-en="Front desk on autopilot" data-es="Recepción en piloto automático">Front desk on autopilot</span>
     </a>
@@ -43,10 +46,10 @@
   </div>
   <div class="hero-visual" aria-hidden="true">
     <div class="flow-diagram">
-      <div class="flow-step"><div class="flow-icon">📅</div><div class="flow-text"><strong data-en="Client books online" data-es="El cliente reserva online">Client books online</strong><small data-en="Calendly or Google Calendar" data-es="Calendly o Google Calendar">Calendly or Google Calendar</small></div></div>
-      <div class="flow-step"><div class="flow-icon">💶</div><div class="flow-text"><strong data-en="€20 deposit requested" data-es="Se pide la señal de €20">€20 deposit requested</strong><small data-en="Payment link sent instantly" data-es="Link de pago al momento">Payment link sent instantly</small></div></div>
-      <div class="flow-step"><div class="flow-icon">⏰</div><div class="flow-text"><strong data-en="Reminder 24h before" data-es="Recordatorio 24h antes">Reminder 24h before</strong><small data-en="Confirm or cancel in one click" data-es="Confirma o cancela con un clic">Confirm or cancel in one click</small></div></div>
-      <div class="flow-step"><div class="flow-icon">🔁</div><div class="flow-text"><strong data-en="Slot freed? Waitlist notified" data-es="¿Hueco libre? Aviso a la lista de espera">Slot freed? Waitlist notified</strong><small data-en="The gap gets filled" data-es="El hueco se rellena">The gap gets filled</small></div></div>
+      <div class="flow-step"><div class="flow-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><path d="M9 15.25l2 2 4-4"/></svg></div><div class="flow-text"><strong data-en="Client books online" data-es="El cliente reserva online">Client books online</strong><small data-en="Calendly or Google Calendar" data-es="Calendly o Google Calendar">Calendly or Google Calendar</small></div></div>
+      <div class="flow-step"><div class="flow-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.4 9.1a4.25 4.25 0 1 0 0 5.8"/><path d="M7.75 10.9h5.25M7.75 13.1h5.25"/></svg></div><div class="flow-text"><strong data-en="€20 deposit requested" data-es="Se pide la señal de €20">€20 deposit requested</strong><small data-en="Payment link sent instantly" data-es="Link de pago al momento">Payment link sent instantly</small></div></div>
+      <div class="flow-step"><div class="flow-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 0 0-12 0c0 6-2.5 8-2.5 8h17S18 15 18 9Z"/><path d="M10.25 20.25a2 2 0 0 0 3.5 0"/></svg></div><div class="flow-text"><strong data-en="Reminder 24h before" data-es="Recordatorio 24h antes">Reminder 24h before</strong><small data-en="Confirm or cancel in one click" data-es="Confirma o cancela con un clic">Confirm or cancel in one click</small></div></div>
+      <div class="flow-step"><div class="flow-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 6h14M3.5 11h6.5M3.5 16h5"/><path d="M12 16a4.5 4.5 0 1 0 4.5-4.5"/><path d="M18.25 9.75 16.5 11.5l1.75 1.75"/></svg></div><div class="flow-text"><strong data-en="Slot freed? Waitlist notified" data-es="¿Hueco libre? Aviso a la lista de espera">Slot freed? Waitlist notified</strong><small data-en="The gap gets filled" data-es="El hueco se rellena">The gap gets filled</small></div></div>
     </div>
   </div>
 </section>
@@ -66,7 +69,7 @@
     <div class="calc-out" aria-live="polite">
       <div class="big" id="c-out">€780</div>
       <p data-en="lost every month" data-es="perdidos cada mes">lost every month</p>
-      <p class="fine" data-en="A €149/month front desk pays for itself after three saved appointments." data-es="Una recepción de €149/mes se paga sola con tres citas salvadas.">A €149/month front desk pays for itself after three saved appointments.</p>
+      <p class="fine" data-en="Most businesses recover the cost of FlowServe with four or five saved appointments a month." data-es="La mayoría de negocios recupera el coste de FlowServe con cuatro o cinco citas salvadas al mes.">Most businesses recover the cost of FlowServe with four or five saved appointments a month.</p>
     </div>
   </div>
 </section>
@@ -108,20 +111,20 @@
   </div>
   <div class="grid">
     <a href="/beauty-wellness/" class="card card--accent">
+      <img class="card-photo" src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=800&h=450&fit=crop&q=75&auto=format" alt="Nail technician working with a client in a salon" loading="lazy" width="800" height="450">
       <span class="tag-now" data-en="Available now" data-es="Disponible ya">Available now</span>
-      <span class="card-icon">💆</span>
       <h3 data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</h3>
       <p data-en="Salons, aesthetic clinics, massage, physio, nails, brows and lashes, yoga and pilates studios." data-es="Salones, clínicas estéticas, masaje, fisio, uñas, cejas y pestañas, estudios de yoga y pilates.">Salons, aesthetic clinics, massage, physio, nails, brows and lashes, yoga and pilates studios.</p>
     </a>
     <a href="/home-services/" class="card">
+      <img class="card-photo" src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?w=800&h=450&fit=crop&q=75&auto=format" alt="Plumber repairing a bathroom" loading="lazy" width="800" height="450">
       <span class="tag-soon" data-en="Early access" data-es="Acceso anticipado">Early access</span>
-      <span class="card-icon">🔧</span>
       <h3 data-en="Home Services" data-es="Servicios del Hogar">Home Services</h3>
       <p data-en="Plumbers, electricians, heat pump and retrofit installers who lose jobs to missed calls." data-es="Fontaneros, electricistas e instaladores de bombas de calor y reformas que pierden trabajos por llamadas perdidas.">Plumbers, electricians, heat pump and retrofit installers who lose jobs to missed calls.</p>
     </a>
     <a href="/healthcare/homecare/" class="card">
+      <img class="card-photo" src="https://images.unsplash.com/photo-1773227055624-07b515ba87c5?w=800&h=450&fit=crop&q=75&auto=format" alt="Carer supporting an older woman at home" loading="lazy" width="800" height="450">
       <span class="tag-soon" data-en="In development" data-es="En desarrollo">In development</span>
-      <span class="card-icon">🏠</span>
       <h3 data-en="Home care agencies" data-es="Agencias de home care">Home care agencies</h3>
       <p data-en="Shift filling and family updates for private home care providers. Opening once HIQA registration rules are in force." data-es="Cobertura de turnos y avisos a familias para agencias privadas de home care. Abrimos cuando entren en vigor las normas de registro de HIQA.">Shift filling and family updates for private home care providers. Opening once HIQA registration rules are in force.</p>
     </a>
@@ -130,28 +133,60 @@
 
 <section class="section" id="pricing">
   <div class="section-header">
-    <h2 data-en="One simple plan" data-es="Un solo plan, sin letra pequeña">One simple plan</h2>
-    <p data-en="Try it for a month. Keep it only if it works." data-es="Pruébalo un mes. Quédatelo solo si te funciona.">Try it for a month. Keep it only if it works.</p>
+    <h2 data-en="Pricing" data-es="Precios">Pricing</h2>
+    <p data-en="Every plan starts with a free 30-day pilot. You only continue if the numbers work." data-es="Todos los planes empiezan con un piloto gratis de 30 días. Solo sigues si los números cuadran.">Every plan starts with a free 30-day pilot. You only continue if the numbers work.</p>
   </div>
-  <div class="offer">
-    <div class="price-card featured-plan">
-      <h3 data-en="Front Desk" data-es="Recepción">Front Desk</h3>
-      <span class="tier-size" data-en="For one business location" data-es="Para un local">For one business location</span>
-      <div class="price">€149</div>
-      <span class="price-period" data-en="per month, from month 2" data-es="al mes, a partir del segundo mes">per month, from month 2</span>
-      <p class="free" data-en="First 30 days free · No setup fee for our first 5 businesses" data-es="Primeros 30 días gratis · Sin coste de montaje para los 5 primeros negocios">First 30 days free · No setup fee for our first 5 businesses</p>
+  <div class="plans">
+    <div class="price-card ">
+      
+      <h3 data-en="Essentials" data-es="Essentials">Essentials</h3>
+      <span class="tier-size" data-en="The automated front desk" data-es="La recepción automática">The automated front desk</span>
+      <div class="price">€290</div>
+      <span class="price-period" data-en="per month, per location" data-es="al mes, por local">per month, per location</span>
       <div class="price-features">
         <span class="check" data-en="Deposit request at every booking" data-es="Petición de señal en cada reserva">Deposit request at every booking</span>
-        <span class="check" data-en="24h reminders with confirm / cancel buttons" data-es="Recordatorios 24h con botones confirmar / cancelar">24h reminders with confirm / cancel buttons</span>
+        <span class="check" data-en="24h and 4h reminders with confirm / cancel" data-es="Recordatorios 24h y 4h con confirmar / cancelar">24h and 4h reminders with confirm / cancel</span>
         <span class="check" data-en="Cancellation policy applied automatically" data-es="Política de cancelación aplicada sola">Cancellation policy applied automatically</span>
-        <span class="check" data-en="Waitlist alerts when a slot frees up" data-es="Avisos a la lista de espera cuando se libera una hora">Waitlist alerts when a slot frees up</span>
-        <span class="check" data-en="Balance request before the session" data-es="Cobro del resto antes de la sesión">Balance request before the session</span>
-        <span class="check" data-en="Client list and daily summary in a simple spreadsheet" data-es="Lista de clientes y resumen diario en una hoja sencilla">Client list and daily summary in a simple spreadsheet</span>
-        <span class="check" data-en="Set up and maintained by us. Cancel any time." data-es="Lo montamos y mantenemos nosotros. Cancelas cuando quieras.">Set up and maintained by us. Cancel any time.</span>
+        <span class="check" data-en="Waitlist refill of freed slots" data-es="Relleno de huecos con la lista de espera">Waitlist refill of freed slots</span>
+        <span class="check" data-en="Balance request and daily summary" data-es="Cobro del resto y resumen diario">Balance request and daily summary</span>
+        <span class="check" data-en="Email support, business hours" data-es="Soporte por email en horario laboral">Email support, business hours</span>
+      </div>
+      <a href="/pilot/" class="btn-secondary" data-en="Start the free pilot" data-es="Empezar el piloto gratis">Start the free pilot</a>
+    </div>
+    <div class="price-card featured-plan">
+      <span class="plan-badge" data-en="Most popular" data-es="Más elegido">Most popular</span>
+      <h3 data-en="Professional" data-es="Professional">Professional</h3>
+      <span class="tier-size" data-en="Front desk + AI assistant" data-es="Recepción + asistente IA">Front desk + AI assistant</span>
+      <div class="price">€490</div>
+      <span class="price-period" data-en="per month, per location" data-es="al mes, por local">per month, per location</span>
+      <div class="price-features">
+        <span class="check" data-en="Everything in Essentials" data-es="Todo lo de Essentials">Everything in Essentials</span>
+        <span class="check" data-en="AI assistant answering enquiries 24/7 (early access)" data-es="Asistente IA que responde consultas 24/7 (acceso anticipado)">AI assistant answering enquiries 24/7 (early access)</span>
+        <span class="check" data-en="Bookings, changes and cancellations by chat" data-es="Reservas, cambios y cancelaciones por chat">Bookings, changes and cancellations by chat</span>
+        <span class="check" data-en="Human handover with full context" data-es="Paso a una persona con todo el contexto">Human handover with full context</span>
+        <span class="check" data-en="Monthly results report: no-shows, refills, revenue saved" data-es="Informe mensual: ausencias, huecos rellenados, ingresos salvados">Monthly results report: no-shows, refills, revenue saved</span>
+        <span class="check" data-en="Priority WhatsApp support" data-es="Soporte prioritario por WhatsApp">Priority WhatsApp support</span>
       </div>
       <a href="/pilot/" class="btn-primary" data-en="Start the free pilot" data-es="Empezar el piloto gratis">Start the free pilot</a>
     </div>
+    <div class="price-card ">
+      
+      <h3 data-en="Clinic &amp; Multi-site" data-es="Clínica y varios locales">Clinic &amp; Multi-site</h3>
+      <span class="tier-size" data-en="Several staff or locations" data-es="Varios profesionales o locales">Several staff or locations</span>
+      <div class="price" data-en="From €890" data-es="Desde €890">From €890</div>
+      <span class="price-period" data-en="per month, per location" data-es="al mes, por local">per month, per location</span>
+      <div class="price-features">
+        <span class="check" data-en="Everything in Professional" data-es="Todo lo de Professional">Everything in Professional</span>
+        <span class="check" data-en="Multiple locations and staff calendars" data-es="Varios locales y agendas de profesionales">Multiple locations and staff calendars</span>
+        <span class="check" data-en="Custom rules per service and location" data-es="Reglas a medida por servicio y local">Custom rules per service and location</span>
+        <span class="check" data-en="WhatsApp and SMS channels (as available)" data-es="Canales WhatsApp y SMS (según disponibilidad)">WhatsApp and SMS channels (as available)</span>
+        <span class="check" data-en="Data processing agreement and onboarding for your team" data-es="Acuerdo RGPD y formación para tu equipo">Data processing agreement and onboarding for your team</span>
+        <span class="check" data-en="Dedicated account manager" data-es="Gestor de cuenta dedicado">Dedicated account manager</span>
+      </div>
+      <a href="/pilot/" class="btn-secondary" data-en="Talk to us" data-es="Hablemos">Talk to us</a>
+    </div>
   </div>
+  <p class="plans-note" data-en="One-off onboarding €450 (set-up, message templates, staff training) — waived for our first five pilot businesses. Prices exclude VAT. Monthly billing, cancel any time." data-es="Alta única €450 (montaje, plantillas de mensajes, formación) — gratis para nuestros cinco primeros negocios piloto. Precios sin IVA. Facturación mensual, cancelas cuando quieras.">One-off onboarding €450 (set-up, message templates, staff training) — waived for our first five pilot businesses. Prices exclude VAT. Monthly billing, cancel any time.</p>
 </section>
 
 <section class="section" id="faq">
@@ -159,7 +194,7 @@
   <div class="faq">
 <details><summary data-en="Do I need to change my booking software?" data-es="¿Tengo que cambiar mi programa de reservas?">Do I need to change my booking software?</summary><p data-en="No. FlowServe works with Calendly and Google Calendar today. If you use something else, tell us and we’ll check before you commit to anything." data-es="No. Hoy FlowServe funciona con Calendly y Google Calendar. Si usas otro, dínoslo y lo revisamos antes de que te comprometas a nada.">No. FlowServe works with Calendly and Google Calendar today. If you use something else, tell us and we’ll check before you commit to anything.</p></details>
 <details><summary data-en="How do clients pay the deposit?" data-es="¿Cómo paga el cliente la señal?">How do clients pay the deposit?</summary><p data-en="Through your own payment link (Revolut, Stripe or similar). The money goes straight to you — we never touch it." data-es="Con tu propio link de pago (Revolut, Stripe o similar). El dinero te llega directo a ti — nosotros nunca lo tocamos.">Through your own payment link (Revolut, Stripe or similar). The money goes straight to you — we never touch it.</p></details>
-<details><summary data-en="What happens after the 30 days?" data-es="¿Qué pasa después de los 30 días?">What happens after the 30 days?</summary><p data-en="We sit down with the numbers: no-shows before and after. If it worked, you continue at €149/month. If not, we switch it off and hand you back your data. No contract to break." data-es="Nos sentamos con los números: ausencias antes y después. Si funcionó, sigues por €149/mes. Si no, lo apagamos y te devolvemos tus datos. Sin contrato que romper.">We sit down with the numbers: no-shows before and after. If it worked, you continue at €149/month. If not, we switch it off and hand you back your data. No contract to break.</p></details>
+<details><summary data-en="What happens after the 30 days?" data-es="¿Qué pasa después de los 30 días?">What happens after the 30 days?</summary><p data-en="We sit down with the numbers: no-shows before and after. If it worked, you continue on the plan you chose. If not, we switch it off and hand you back your data. No contract to break." data-es="Nos sentamos con los números: ausencias antes y después. Si funcionó, sigues con el plan que elegiste. Si no, lo apagamos y te devolvemos tus datos. Sin contrato que romper.">We sit down with the numbers: no-shows before and after. If it worked, you continue on the plan you chose. If not, we switch it off and hand you back your data. No contract to break.</p></details>
 <details><summary data-en="Is my clients’ data safe?" data-es="¿Están seguros los datos de mis clientes?">Is my clients’ data safe?</summary><p data-en="Your client data stays in your own Google account. We act as your data processor under a written GDPR agreement, and we don’t sell data or use it to train AI models." data-es="Los datos de tus clientes se quedan en tu propia cuenta de Google. Actuamos como encargados del tratamiento con un acuerdo RGPD por escrito, y no vendemos datos ni los usamos para entrenar IA.">Your client data stays in your own Google account. We act as your data processor under a written GDPR agreement, and we don’t sell data or use it to train AI models.</p></details>
 <details><summary data-en="Who writes the messages?" data-es="¿Quién escribe los mensajes?">Who writes the messages?</summary><p data-en="We write them with you, in your tone, and you approve them before anything goes out. They are sent from your business, not from us." data-es="Los escribimos contigo, con tu tono, y tú los apruebas antes de que salga nada. Se envían desde tu negocio, no desde nosotros.">We write them with you, in your tone, and you approve them before anything goes out. They are sent from your business, not from us.</p></details>
   </div>
