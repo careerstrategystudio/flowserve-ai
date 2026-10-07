@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Live demos · FlowServe</title>
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  .pick { max-width: 900px; margin: 40px auto 60px; padding: 0 16px; }
+  .pick h1 { color: var(--t1); font-size: clamp(26px, 4vw, 38px); line-height: 1.15; letter-spacing: -.01em; }
+  .pick .lead { margin-top: 10px; font-size: 16px; max-width: 640px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .card { display: block; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--s1); transition: border-color .2s, transform .2s; }
+  .card:hover { border-color: var(--pri); transform: translateY(-2px); }
+  .card .top { padding: 22px 20px; color: #fff; }
+  .card .top b { font-size: 22px; display: block; }
+  .card .top span { font-size: 13px; opacity: .85; }
+  .card .bd { padding: 16px 20px 20px; font-size: 14px; }
+  .card .bd .go { margin-top: 12px; color: var(--pri-t); font-weight: 600; }
+  .w .top { background: linear-gradient(160deg,#2c4b3f,#557f6c); font-family: Georgia, serif; }
+  .n .top { background: linear-gradient(160deg,#3a2430,#8f4c62); font-family: Georgia, serif; }
+  .lang { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .08em; border: 1px solid var(--line2); border-radius: 999px; padding: 2px 8px; margin-bottom: 8px; color: var(--t3); }
+  @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-in">
+  <a class="brand" href="/"><img src="/assets/brand/logo-mark.svg" alt="">FlowServe</a>
+  <span class="badge-demo">Demo</span><span class="sp"></span>
+  <a class="btn-ghost" href="/pilot/">Free 14-day pilot</a>
+</div></header>
+<main class="pick">
+  <h1>See it working in 2 minutes</h1>
+  <p class="lead">Book as a client on the left, watch the owner's dashboard on the right. Deposit, reminders, a cancellation and the waiting list refilling the slot. Both businesses are fictitious and nothing is sent or charged.</p>
+  <div class="cards">
+    <a class="card w" href="/demo/wellness/">
+      <div class="top"><b>Halden Wellness Studio</b><span>Massage therapy · Dublin</span></div>
+      <div class="bd"><span class="lang">EN</span><br>Relaxation, deep tissue and hot stone. €20 deposit, reminders 24 h and 4 h before.<div class="go">Open demo →</div></div>
+    </a>
+    <a class="card n" href="/demo/unas/">
+      <div class="top"><b>Atelier Nube</b><span>Uñas y pestañas · Madrid</span></div>
+      <div class="bd"><span class="lang">ES</span><br>Semipermanente, gel y extensiones de pestañas. Señal de 10 €, recordatorios 24 h y 4 h antes.<div class="go">Abrir demo →</div></div>
+    </a>
+  </div>
+</main>
+</body>
+</html>

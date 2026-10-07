@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Wellness studio demo · FlowServe</title>
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>.screen{ --b-bg:#f7f4ef;--b-ink:#2b2a26;--b-mut:#6f6a60;--b-card:#ffffff;--b-line:#e4dccf;--b-acc:#3f6b5a;--b-acc-ink:#ffffff;--b-acc-soft:rgba(63,107,90,.12);--b-hero:linear-gradient(160deg,#2c4b3f,#557f6c);--b-hero-ink:#f7f4ef;--b-font:'Fraunces',Georgia,serif; }</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="/demo/"><img src="/assets/brand/logo-mark.svg" alt="">FlowServe</a>
+    <span class="badge-demo">Demo</span>
+    <span class="sp"></span>
+    <a class="btn-ghost" href="/demo/">All demos</a>
+    <button class="btn-ghost" data-act="restart">Restart</button>
+  </div>
+  <p class="disclaimer">Fictitious business with sample data. No bookings, emails or payments are real, and nothing you type is saved or sent.</p>
+</header>
+
+<section class="guide" aria-live="polite">
+  <div class="steps" id="steps"></div>
+  <div class="hint"><span class="txt" id="hint-txt"></span><span class="clock">🕒 <span id="clock"></span></span><button class="btn-jump" id="jump" hidden></button></div>
+</section>
+
+<div class="switch"><div class="switch-in">
+  <button data-v="client" class="on">Client</button>
+  <button data-v="owner">Owner<span class="dot" id="dot"></span></button>
+</div></div>
+
+<main class="stage" data-view="client">
+  <div class="col-client">
+    <div class="col-label">What the client sees</div>
+    <div class="phone"><div class="screen">
+      <div class="statusbar"><span>9:41</span><span>●●● ▮</span></div>
+      <div class="scr" id="scr"></div>
+    </div></div>
+  </div>
+
+  <div class="col-owner">
+    <div class="col-label">What the owner sees</div>
+    <section class="owner">
+      <div class="o-head">
+        <img src="/assets/brand/logo-mark.svg" alt="" width="22" height="22">
+        <div><div class="t">Halden Wellness Studio · Owner dashboard</div><div class="s" id="o-date"></div></div>
+        <span class="sp"></span><span class="live">Live</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="l">New deposits</div><div class="v" data-k="dep"></div></div>
+        <div class="kpi"><div class="l">Confirmed</div><div class="v" data-k="conf"></div></div>
+        <div class="kpi"><div class="l">Slots refilled</div><div class="v" data-k="refill"></div></div>
+        <div class="kpi"><div class="l">Revenue saved</div><div class="v" data-k="saved"></div></div>
+      </div>
+      <div class="o-grid">
+        <div class="o-col"><div class="o-h"><span>Diary</span></div><div id="diary"></div></div>
+        <div class="o-col">
+          <div class="o-h"><span>Waiting list</span></div><div id="wait"></div>
+          <div class="feed"><div class="o-h"><span>Activity</span></div><div id="feed"></div></div>
+        </div>
+      </div>
+      <div class="results">
+        <div class="res-box"><h3>In this demo</h3>
+          <div class="res-line"><span>Deposits collected</span><b id="r-dep"></b></div>
+          <div class="res-line"><span>Reminders sent</span><b id="r-rem"></b></div>
+          <div class="res-line"><span>Slots refilled</span><b id="r-refill"></b></div>
+          <div class="res-line"><span>Revenue saved</span><b id="r-saved"></b></div>
+        </div>
+        <div class="res-box"><h3>Your numbers</h3>
+          <div class="calc">
+            <label><span>No-shows a week</span><input id="c-n" type="number" inputmode="numeric" min="0" max="99" value="3"></label>
+            <label><span>Average price (€)</span><input id="c-p" type="number" inputmode="numeric" min="0" max="2000" value="60"></label>
+          </div>
+          <div class="calc-out"><b id="c-out"></b>at risk every month</div>
+          <p class="foot-note">Your own numbers × 4.33 weeks. An estimate, not a client result.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status">The owner dashboard just updated<button data-v="owner">View</button></div>
+
+<script>window.DEMO = {"biz": {"name": "Halden Wellness Studio", "tag": "Massage therapy · Dublin", "initials": "HW", "addr": "the studio (address in your booking email)"}, "deposit": 20, "services": [{"id": "relax", "n": "Relaxation Massage", "d": 60, "p": 75}, {"id": "deep", "n": "Deep Tissue Massage", "d": 60, "p": 80}, {"id": "back", "n": "Back, Neck & Shoulders", "d": 30, "p": 45}, {"id": "stone", "n": "Hot Stone Massage", "d": 75, "p": 95}], "slots": ["10:00", "11:30", "13:30", "15:00", "16:30", "18:00"], "diary": [{"t": "10:00", "who": "Emma B.", "svc": "Deep Tissue Massage"}, {"t": "15:00", "who": "Liam F.", "svc": "Back, Neck & Shoulders"}, {"t": "18:00", "who": "Grace H.", "svc": "Hot Stone Massage"}], "waitlist": [{"who": "Niamh K.", "wants": "any time that day"}, {"who": "Ciarán D.", "wants": "afternoons"}, {"who": "Sarah O.", "wants": "after 17:00"}], "client": {"name": "Aoife Murphy", "email": "aoife@example.com"}, "locale": "en-IE", "s": {"demoTag": "Demo · fictitious business", "services": "Treatments", "back": "Back", "pickTime": "Choose a time", "greyed": "Greyed-out times are already booked.", "yourDetails": "Your details", "name": "Name", "email": "Email", "policy": "A {dep} deposit secures your booking. Free cancellation up to 24 hours before — your deposit stays as credit.", "depositExplain": "Today you pay a <b>{dep} deposit<\/b>. The remaining <b>{rest}<\/b> is paid at the studio.", "payDeposit": "Continue to pay {dep}", "securePay": "Secure payment link", "payFor": "Deposit · {svc} · {biz}", "payNote": "Demo: no card details, nothing is charged. In real use this is the business's own Stripe or SumUp link, and the money goes straight to them.", "payBtn": "Pay {dep}", "processing": "Confirming payment…", "inbox": "Inbox", "justNow": "Just now", "r24when": "24 h before", "r4when": "4 h before", "mailConfH": "You're booked in ✓", "mailConfP": "Thanks {name}, your deposit is in and your time is held.", "kService": "Treatment", "kWhen": "When", "kDeposit": "Deposit", "kBalance": "To pay on the day", "kBalancePaid": "Balance paid", "kTotal": "Total", "mailConfFoot": "Need to change it? Reply to any reminder — one tap.", "mail24H": "Tomorrow at {t} — still good?", "mail24P": "Hi {name}, just a reminder of your {svc} tomorrow. Can you confirm?", "btnConfirm": "Confirm", "btnCancel": "I need to cancel", "confirmedBtn": "Confirmed ✓", "cancelledBtn": "Cancelled", "mail4H": "See you at {t} today", "mail4P": "We're at {addr}. Please arrive 5 minutes early.", "mailDoneH": "Thanks for coming, {name}", "mailCreditH": "Your credit is saved", "mailCreditP": "Hi {name}, your {dep} deposit is kept as credit. Book again whenever suits you.", "cancelQ": "Cancel this appointment?", "cancelPolicy": "You're cancelling more than 24 hours before, so your <b>{dep} deposit stays as credit<\/b> for your next visit.", "cancelYes": "Yes, cancel", "keepIt": "Keep my appointment", "cancelledH": "Cancelled", "cancelledP": "Your {dep} credit is saved. We've let the studio know.", "seeInbox": "Back to inbox", "freeSlot": "Free", "noActivity": "Nothing yet. Book something on the phone.", "clockNow": "Now", "steps": ["Client books", "Day-before reminder", "Confirm or cancel", "Result"], "hints": {"start": "Tap a treatment on the phone, as if you were a new client.", "booking": "Pick a time and pay the deposit. Keep an eye on the owner dashboard.", "booked": "Booked, and the deposit is already in. Now jump to the day before.", "r24": "The client gets a reminder with one-tap buttons. Try <b>“I need to cancel”<\/b>: that's where the waiting list kicks in.", "confirmed": "Confirmed. Jump to the final reminder.", "r4": "Final reminder sent. One client still hasn't answered, so the owner sees it flagged.", "done": "Visit done and paid. Restart and try cancelling to see the waiting list.", "waiting": "The slot is free. Watch the owner dashboard: it's offered to the waiting list on its own.", "refilled": "Slot refilled without the owner lifting a finger. That's the money that used to walk out the door."}, "jumps": {"j24": "⏩ Jump to 24 h before", "j4": "⏩ Jump to 4 h before", "jafter": "⏩ Jump to after the visit", "restart": "↺ Restart demo"}, "chips": {"paid": "Deposit paid", "confirmed": "Confirmed", "noreply": "No reply yet", "atrisk": "At risk · flagged", "released": "Cancelled · offering", "refilled": "Refilled", "done": "Done · paid", "offered": "Offer sent", "booked": "Booked"}, "ev": {"booked": "New booking: <b>{who}<\/b> · {svc} · {t}", "deposit": "Deposit <b>{dep}<\/b> received from {who}", "r24": "24 h reminders sent to <b>{n} clients<\/b>", "confirmed": "<b>{who}<\/b> confirmed", "cancelled": "<b>{who}<\/b> cancelled more than 24 h before · {dep} kept as credit", "offered": "Slot {t} offered to the waiting list: <b>{who}<\/b> first", "accepted": "<b>{who}<\/b> took the {t} slot · deposit {dep} paid", "r4": "4 h reminder sent to <b>{who}<\/b>", "atrisk": "<b>{who}<\/b> hasn't confirmed: flagged so you can call", "done": "<b>{who}<\/b> came in · {total} collected"}}};</script>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

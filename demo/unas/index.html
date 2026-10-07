@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Demo estudio de uñas y pestañas · FlowServe</title>
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/demo/demo.css">
+<style>.screen{ --b-bg:#fbf6f4;--b-ink:#2d2226;--b-mut:#7a6a6f;--b-card:#ffffff;--b-line:#eedcdf;--b-acc:#b0506a;--b-acc-ink:#ffffff;--b-acc-soft:rgba(176,80,106,.12);--b-hero:linear-gradient(160deg,#3a2430,#8f4c62);--b-hero-ink:#fff4f6;--b-font:'DM Serif Display',Georgia,serif; }</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="/demo/"><img src="/assets/brand/logo-mark.svg" alt="">FlowServe</a>
+    <span class="badge-demo">Demo</span>
+    <span class="sp"></span>
+    <a class="btn-ghost" href="/demo/">Todas las demos</a>
+    <button class="btn-ghost" data-act="restart">Reiniciar</button>
+  </div>
+  <p class="disclaimer">Negocio ficticio con datos de ejemplo. Ninguna reserva, email ni pago es real, y nada de lo que escribas se guarda ni se envía.</p>
+</header>
+
+<section class="guide" aria-live="polite">
+  <div class="steps" id="steps"></div>
+  <div class="hint"><span class="txt" id="hint-txt"></span><span class="clock">🕒 <span id="clock"></span></span><button class="btn-jump" id="jump" hidden></button></div>
+</section>
+
+<div class="switch"><div class="switch-in">
+  <button data-v="client" class="on">Clienta</button>
+  <button data-v="owner">Dueña<span class="dot" id="dot"></span></button>
+</div></div>
+
+<main class="stage" data-view="client">
+  <div class="col-client">
+    <div class="col-label">Lo que ve la clienta</div>
+    <div class="phone"><div class="screen">
+      <div class="statusbar"><span>9:41</span><span>●●● ▮</span></div>
+      <div class="scr" id="scr"></div>
+    </div></div>
+  </div>
+
+  <div class="col-owner">
+    <div class="col-label">Lo que ve la dueña</div>
+    <section class="owner">
+      <div class="o-head">
+        <img src="/assets/brand/logo-mark.svg" alt="" width="22" height="22">
+        <div><div class="t">Atelier Nube · Panel del negocio</div><div class="s" id="o-date"></div></div>
+        <span class="sp"></span><span class="live">En directo</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="l">Señales nuevas</div><div class="v" data-k="dep"></div></div>
+        <div class="kpi"><div class="l">Confirmadas</div><div class="v" data-k="conf"></div></div>
+        <div class="kpi"><div class="l">Huecos recuperados</div><div class="v" data-k="refill"></div></div>
+        <div class="kpi"><div class="l">Ingresos salvados</div><div class="v" data-k="saved"></div></div>
+      </div>
+      <div class="o-grid">
+        <div class="o-col"><div class="o-h"><span>Agenda</span></div><div id="diary"></div></div>
+        <div class="o-col">
+          <div class="o-h"><span>Lista de espera</span></div><div id="wait"></div>
+          <div class="feed"><div class="o-h"><span>Actividad</span></div><div id="feed"></div></div>
+        </div>
+      </div>
+      <div class="results">
+        <div class="res-box"><h3>En esta demo</h3>
+          <div class="res-line"><span>Señales cobradas</span><b id="r-dep"></b></div>
+          <div class="res-line"><span>Recordatorios enviados</span><b id="r-rem"></b></div>
+          <div class="res-line"><span>Huecos recuperados</span><b id="r-refill"></b></div>
+          <div class="res-line"><span>Ingresos salvados</span><b id="r-saved"></b></div>
+        </div>
+        <div class="res-box"><h3>Tus números</h3>
+          <div class="calc">
+            <label><span>Ausencias por semana</span><input id="c-n" type="number" inputmode="numeric" min="0" max="99" value="3"></label>
+            <label><span>Precio medio (€)</span><input id="c-p" type="number" inputmode="numeric" min="0" max="2000" value="60"></label>
+          </div>
+          <div class="calc-out"><b id="c-out"></b>en riesgo cada mes</div>
+          <p class="foot-note">Tus propios números × 4,33 semanas. Es una estimación, no un resultado de clientes.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status">El panel de la dueña se acaba de actualizar<button data-v="owner">Ver</button></div>
+
+<script>window.DEMO = {"biz": {"name": "Atelier Nube", "tag": "Uñas y pestañas · Madrid", "initials": "AN", "addr": "el estudio (la dirección va en tu email de reserva)"}, "deposit": 10, "services": [{"id": "semi", "n": "Manicura semipermanente", "d": 45, "p": 25}, {"id": "gel", "n": "Uñas de gel esculpidas", "d": 90, "p": 45}, {"id": "ext", "n": "Extensiones de pestañas pelo a pelo", "d": 120, "p": 65}, {"id": "lift", "n": "Lifting y tinte de pestañas", "d": 60, "p": 40}], "slots": ["10:00", "11:30", "13:00", "16:30", "18:00", "19:30"], "diary": [{"t": "10:00", "who": "Sara M.", "svc": "Manicura semipermanente"}, {"t": "16:30", "who": "Irene P.", "svc": "Lifting y tinte de pestañas"}, {"t": "19:30", "who": "Nerea G.", "svc": "Uñas de gel esculpidas"}], "waitlist": [{"who": "Marta R.", "wants": "cualquier hora ese día"}, {"who": "Paula S.", "wants": "por la tarde"}, {"who": "Carmen V.", "wants": "después de las 18:00"}], "client": {"name": "Lucía Fernández", "email": "lucia@example.com"}, "locale": "es-ES", "s": {"demoTag": "Demo · negocio ficticio", "services": "Servicios", "back": "Atrás", "pickTime": "Elige una hora", "greyed": "Las horas en gris ya están reservadas.", "yourDetails": "Tus datos", "name": "Nombre", "email": "Email", "policy": "Una señal de {dep} reserva tu cita. Cancelación gratis hasta 24 h antes: la señal te queda como saldo.", "depositExplain": "Hoy pagas una <b>señal de {dep}<\/b>. Los <b>{rest}<\/b> restantes los pagas en el estudio.", "payDeposit": "Continuar y pagar {dep}", "securePay": "Enlace de pago seguro", "payFor": "Señal · {svc} · {biz}", "payNote": "Demo: sin datos de tarjeta, no se cobra nada. En uso real es el enlace de Stripe o SumUp del propio negocio y el dinero le llega directo.", "payBtn": "Pagar {dep}", "processing": "Confirmando el pago…", "inbox": "Bandeja de entrada", "justNow": "Ahora", "r24when": "24 h antes", "r4when": "4 h antes", "mailConfH": "¡Cita reservada! ✓", "mailConfP": "Gracias, {name}. Hemos recibido tu señal y tu hora está guardada.", "kService": "Servicio", "kWhen": "Cuándo", "kDeposit": "Señal", "kBalance": "A pagar el día de la cita", "kBalancePaid": "Resto pagado", "kTotal": "Total", "mailConfFoot": "¿Necesitas cambiarla? Responde a cualquier recordatorio con un toque.", "mail24H": "Mañana a las {t}, ¿sigue en pie?", "mail24P": "Hola, {name}: te recordamos tu cita de {svc} mañana. ¿Nos la confirmas?", "btnConfirm": "Confirmo", "btnCancel": "Necesito cancelar", "confirmedBtn": "Confirmada ✓", "cancelledBtn": "Cancelada", "mail4H": "Te esperamos hoy a las {t}", "mail4P": "Estamos en {addr}. Intenta llegar 5 minutos antes.", "mailDoneH": "Gracias por venir, {name}", "mailCreditH": "Tu saldo está guardado", "mailCreditP": "Hola, {name}: tu señal de {dep} queda como saldo. Reserva de nuevo cuando quieras.", "cancelQ": "¿Cancelar esta cita?", "cancelPolicy": "Cancelas con más de 24 h de antelación, así que <b>tu señal de {dep} queda como saldo<\/b> para tu próxima cita.", "cancelYes": "Sí, cancelar", "keepIt": "Mantener mi cita", "cancelledH": "Cita cancelada", "cancelledP": "Tu saldo de {dep} está guardado. Ya hemos avisado al estudio.", "seeInbox": "Volver a la bandeja", "freeSlot": "Libre", "noActivity": "Todavía nada. Reserva algo desde el móvil.", "clockNow": "Ahora", "steps": ["La clienta reserva", "Recordatorio del día antes", "Confirma o cancela", "Resultado"], "hints": {"start": "Toca un servicio en el móvil, como si fueras una clienta nueva.", "booking": "Elige una hora y paga la señal. Fíjate en el panel de la dueña.", "booked": "Reservada, y la señal ya está cobrada. Ahora salta al día antes.", "r24": "La clienta recibe un recordatorio con botones de un toque. Prueba <b>«Necesito cancelar»<\/b>: ahí entra la lista de espera.", "confirmed": "Confirmada. Salta al último recordatorio.", "r4": "Último recordatorio enviado. Una clienta sigue sin contestar y la dueña la ve marcada.", "done": "Cita hecha y pagada. Reinicia y prueba a cancelar para ver la lista de espera.", "waiting": "El hueco queda libre. Mira el panel: se ofrece solo a la lista de espera.", "refilled": "Hueco recuperado sin que la dueña mueva un dedo. Ese es el dinero que antes se perdía."}, "jumps": {"j24": "⏩ Saltar a 24 h antes", "j4": "⏩ Saltar a 4 h antes", "jafter": "⏩ Saltar a después de la cita", "restart": "↺ Reiniciar demo"}, "chips": {"paid": "Señal pagada", "confirmed": "Confirmada", "noreply": "Sin respuesta", "atrisk": "En riesgo · avisada", "released": "Cancelada · ofreciendo", "refilled": "Recuperada", "done": "Hecha · pagada", "offered": "Oferta enviada", "booked": "Reservó"}, "ev": {"booked": "Nueva reserva: <b>{who}<\/b> · {svc} · {t}", "deposit": "Señal de <b>{dep}<\/b> recibida de {who}", "r24": "Recordatorios de 24 h enviados a <b>{n} clientas<\/b>", "confirmed": "<b>{who}<\/b> ha confirmado", "cancelled": "<b>{who}<\/b> canceló con más de 24 h · {dep} quedan como saldo", "offered": "Hueco de las {t} ofrecido a la lista de espera: primero a <b>{who}<\/b>", "accepted": "<b>{who}<\/b> se quedó el hueco de las {t} · señal de {dep} pagada", "r4": "Recordatorio de 4 h enviado a <b>{who}<\/b>", "atrisk": "<b>{who}<\/b> no ha confirmado: marcada para que la llames", "done": "<b>{who}<\/b> vino · {total} cobrados"}}};</script>
+<script src="/demo/demo.js"></script>
+</body>
+</html>
