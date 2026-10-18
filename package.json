@@ -1,0 +1,10 @@
+{
+  "name": "flowserve-ai",
+  "private": true,
+  "type": "module",
+  "description": "FlowServe website + AI voice receptionist API (Vercel functions in /api)",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}

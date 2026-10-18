@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Dashboard · FlowServe</title>
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/app/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="/"><img src="/assets/brand/logo-mark.svg" alt="" width="24" height="24">FlowServe</a>
+    <select id="biz" class="biz" hidden aria-label="Business"></select>
+    <span class="sp"></span>
+    <button id="signout" class="ghost" hidden>Sign out</button>
+  </div>
+</header>
+
+<main id="login" class="card login" hidden>
+  <h1>Sign in to your dashboard</h1>
+  <p class="mut">We'll email you a sign-in link. No password needed.</p>
+  <form id="login-form">
+    <label class="fld"><span>Email</span><input id="email" type="email" required autocomplete="email" placeholder="you@business.ie"></label>
+    <button class="pri" type="submit">Email me a link</button>
+  </form>
+  <p id="login-msg" class="mut small" role="status"></p>
+</main>
+
+<main id="dash" class="wrap" hidden>
+  <section class="kpis" id="kpis"></section>
+  <nav class="tabs" role="tablist">
+    <button class="on" data-tab="inbox" role="tab">Inbox <span id="badge" class="badge" hidden></span></button>
+    <button data-tab="calls" role="tab">Calls</button>
+    <button data-tab="bookings" role="tab">Bookings</button>
+    <button data-tab="usage" role="tab">Usage</button>
+  </nav>
+  <section id="tab-inbox" class="tab"></section>
+  <section id="tab-calls" class="tab" hidden></section>
+  <section id="tab-bookings" class="tab" hidden></section>
+  <section id="tab-usage" class="tab" hidden></section>
+</main>
+
+<main id="setup" class="card login" hidden>
+  <h1>Almost there</h1>
+  <p class="mut" id="setup-msg"></p>
+</main>
+
+<div id="toast" class="toast" role="status"></div>
+<script type="module" src="/app/app.js"></script>
+</body>
+</html>
