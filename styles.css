@@ -933,3 +933,9 @@ a.card:hover, .card:hover {
 .plan-badge { position: absolute; top: -11px; left: 1.5rem; background: #0ea5e9; color: #04111d; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 6px; }
 .plans-note { text-align: center; color: var(--text-muted); font-size: .9rem; max-width: 720px; margin: 1.75rem auto 0; }
 @media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 520px; } }
+
+/* Menú con 6 enlaces: que no se partan en dos líneas */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1440px) { .header-content .logo-sub { display: none; } }
+@media (max-width: 1240px) and (min-width: 861px) { .nav-links { gap: .9rem; } .nav-links a { font-size: .86rem; } }
+@media (max-width: 1120px) and (min-width: 861px) { .nav-right .btn-sm { display: none; } .nav-links { gap: .7rem; } .nav-links a { font-size: .82rem; } }
