@@ -1,85 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FlowServe Hostelería — IA para reservas, consultas y quejas</title>
-<meta name="description" content="Responde reservas, consultas y quejas al momento. Para hoteles, hostales y resorts.">
+<title>FlowServe Hospitality — AI front desk for cafés, restaurants and B&amp;Bs</title>
+<meta name="description" content="An AI front desk for cafés, restaurants, small hotels and B&amp;Bs in Ireland: phone and Instagram answered, table and room enquiries, weekly report. Early access." data-en-content="An AI front desk for cafés, restaurants, small hotels and B&amp;Bs in Ireland: phone and Instagram answered, table and room enquiries, weekly report. Early access." data-es-content="Una recepción con IA para cafeterías, restaurantes, pequeños hoteles y B&amp;Bs en Irlanda: teléfono e Instagram atendidos, consultas de mesas y habitaciones, informe semanal. Acceso anticipado.">
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/voice/voice.css">
 </head>
 <body>
-
 <header class="site">
   <div class="header-content">
     <a href="/" class="logo">
       <img class="logo-mark" src="/assets/brand/logo-mark.svg" alt="" width="28" height="28">
       FlowServe
-      <span class="logo-sub" data-es="Hostelería" data-en="Hospitality">Hostelería</span>
+      <span class="logo-sub" data-en="Front desk on autopilot" data-es="Recepción en piloto automático">Front desk on autopilot</span>
     </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
+      <a href="/hospitality/" data-en="Hospitality" data-es="Hostelería">Hospitality</a>
+      <a href="/voice/" data-en="AI Receptionist" data-es="Recepcionista IA">AI Receptionist</a>
+      <a href="/demo/" data-en="Live demo" data-es="Demo en vivo">Live demo</a>
+      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+    </nav>
     <div class="nav-right">
-      <div class="lang-selector" role="group" aria-label="Idioma / Language">
-        <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      <div class="lang-selector" role="group" aria-label="Language / Idioma">
+        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <a href="demo.html" class="btn-sm" data-es="Ver demo" data-en="See demo">Ver demo</a>
+      <a href="/pilot/" class="btn-sm" data-en="Try it free" data-es="Pruébalo gratis">Try it free</a>
     </div>
   </div>
 </header>
-
 <main>
-  <nav class="breadcrumb">
-    <a href="/">FlowServe</a> ›
-    <span data-es="Hostelería" data-en="Hospitality">Hostelería</span>
-  </nav>
 
-  <section class="hero hero-solo">
-    <div class="hero-content">
-      <h1 class="gradient-text" data-es="Ninguna consulta sin responder, a ninguna hora" data-en="No enquiry left unanswered, at any hour">Ninguna consulta sin responder, a ninguna hora</h1>
-      <p class="subtitle" data-es="Reservas, preguntas frecuentes, recomendaciones locales y quejas atendidas al instante. Para hoteles, hostales y resorts." data-en="Bookings, FAQs, local recommendations and complaints handled instantly. For hotels, hostels and resorts.">Reservas, preguntas frecuentes, recomendaciones locales y quejas atendidas al instante. Para hoteles, hostales y resorts.</p>
-      <div class="hero-cta">
-        <a href="demo.html" class="btn-primary" data-es="Ver demo" data-en="See demo">Ver demo</a>
-        <a href="mailto:hello@flowserve.io?subject=FlowServe%20Hosteleria" class="btn-secondary" data-es="Escribinos" data-en="Get in touch">Escribinos</a>
-      </div>
+<section class="hero">
+  <div class="hero-content">
+    <span class="eyebrow" data-en="Hospitality · Early access" data-es="Hostelería · Acceso anticipado">Hospitality · Early access</span>
+    <h1 class="gradient-text" data-en="Bookings and questions answered, even mid-service." data-es="Reservas y preguntas atendidas, incluso en pleno servicio.">Bookings and questions answered, even mid-service.</h1>
+    <p class="subtitle" data-en="For cafés, independent restaurants, small hotels and B&amp;Bs in Ireland. An AI front desk that answers your phone and Instagram messages, takes table and room enquiries and answers the usual questions — so your team can stay on the floor." data-es="Para cafeterías, restaurantes independientes, pequeños hoteles y B&amp;Bs en Irlanda. Una recepción con IA que contesta tu teléfono y tus mensajes de Instagram, toma consultas de mesas y habitaciones y responde las preguntas de siempre — para que tu equipo siga en sala.">For cafés, independent restaurants, small hotels and B&amp;Bs in Ireland. An AI front desk that answers your phone and Instagram messages, takes table and room enquiries and answers the usual questions — so your team can stay on the floor.</p>
+    <div class="hero-cta">
+      <a href="mailto:javierignacioayala@gmail.com?subject=FlowServe%20Hospitality%20early%20access" class="btn-primary" data-en="Join early access" data-es="Únete al acceso anticipado">Join early access</a>
+      <a href="/voice/#talk" class="btn-secondary" data-en="Hear the AI receptionist" data-es="Escucha a la recepcionista IA">Hear the AI receptionist</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-visual">
+    <div class="call-mock" aria-label="Example call">
+      <div class="cm-top"><span class="cm-dot"></span><b data-en="Incoming call · Friday 19:42" data-es="Llamada entrante · viernes 19:42">Incoming call · Friday 19:42</b></div>
+      <div class="cm-line ai"><span class="who">AI</span><p>Hi, thanks for calling. I’m the virtual assistant, an AI, and this call is transcribed. How can I help?</p></div>
+      <div class="cm-line"><span class="who" data-en="Guest" data-es="Cliente">Guest</span><p>Have you a table for four tomorrow around eight?</p></div>
+      <span class="cm-tool" data-en="Checked availability" data-es="Disponibilidad consultada">Checked availability</span>
+      <div class="cm-line ai"><span class="who">AI</span><p>I can do 7:45 or 8:30 tomorrow. Which would you like?</p></div>
+    </div>
+  </div>
+</section>
 
-  <section class="section">
-    <div class="grid">
-      <article class="card card--accent">
-        <span class="card-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><path d="M9 15.25l2 2 4-4"/></svg></span>
-        <h3 data-es="Reservas y disponibilidad" data-en="Bookings and availability">Reservas y disponibilidad</h3>
-        <p data-es="Responde consultas de disponibilidad y precios al momento, en el idioma del huésped." data-en="Answers availability and pricing enquiries instantly, in the guest's language.">Responde consultas de disponibilidad y precios al momento, en el idioma del huésped.</p>
-      </article>
-      <article class="card card--accent">
-        <span class="card-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3h11A1.5 1.5 0 0 1 19 4.5V21l-2.33-1.5L14.33 21 12 19.5 9.67 21l-2.34-1.5L5 21V4.5A1.5 1.5 0 0 1 6.5 3Z"/><path d="M8.75 8h6.5M8.75 11.5h6.5M8.75 15h3.5"/></svg></span>
-        <h3 data-es="Recomendaciones locales" data-en="Local recommendations">Recomendaciones locales</h3>
-        <p data-es="Restaurantes, transporte y qué hacer cerca. Sin ocupar a recepción." data-en="Restaurants, transport and things to do nearby. Without tying up the front desk.">Restaurantes, transporte y qué hacer cerca. Sin ocupar a recepción.</p>
-      </article>
-      <article class="card card--accent">
-        <span class="card-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 0 0-12 0c0 6-2.5 8-2.5 8h17S18 15 18 9Z"/><path d="M10.25 20.25a2 2 0 0 0 3.5 0"/></svg></span>
-        <h3 data-es="Quejas antes de la reseña" data-en="Complaints before the review">Quejas antes de la reseña</h3>
-        <p data-es="Detecta al huésped molesto y lo escala a tu equipo antes de que escriba la reseña." data-en="Spots the unhappy guest and escalates to your team before the review gets written.">Detecta al huésped molesto y lo escala a tu equipo antes de que escriba la reseña.</p>
-      </article>
-    </div>
-  </section>
+<section class="section">
+  <div class="section-header">
+    <h2 data-en="What it will handle" data-es="Lo que resolverá">What it will handle</h2>
+    <p data-en="The same front desk we run for beauty and wellness businesses, adapted to how hospitality works." data-es="La misma recepción que montamos para negocios de belleza y bienestar, adaptada a cómo funciona la hostelería.">The same front desk we run for beauty and wellness businesses, adapted to how hospitality works.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h3 data-en="Table and room enquiries" data-es="Consultas de mesas y habitaciones">Table and room enquiries</h3><p data-en="Answers the phone when the team can’t, checks availability and takes the booking or passes it to you." data-es="Contesta cuando el equipo no puede, mira la disponibilidad y toma la reserva o te la pasa.">Answers the phone when the team can’t, checks availability and takes the booking or passes it to you.</p></div>
+    <div class="card"><h3 data-en="The usual questions" data-es="Las preguntas de siempre">The usual questions</h3><p data-en="Opening hours, menu, parking, check-in times, breakfast. Anything about allergens goes to your team, never guessed." data-es="Horarios, carta, aparcamiento, horas de check-in, desayuno. Lo de alérgenos va a tu equipo, nunca se adivina.">Opening hours, menu, parking, check-in times, breakfast. Anything about allergens goes to your team, never guessed.</p></div>
+    <div class="card"><h3 data-en="Instagram messages" data-es="Mensajes de Instagram">Instagram messages</h3><p data-en="The same answers in your Instagram and Facebook inbox, so no message waits until the morning." data-es="Las mismas respuestas en tu bandeja de Instagram y Facebook, para que ningún mensaje espere a la mañana.">The same answers in your Instagram and Facebook inbox, so no message waits until the morning.</p></div>
+    <div class="card"><h3 data-en="Groups and events to you" data-es="Grupos y eventos, para ti">Groups and events to you</h3><p data-en="Bigger bookings and special requests land in your Inbox with a summary. You answer, and she calls the guest back." data-es="Las reservas grandes y peticiones especiales llegan a tu Bandeja con un resumen. Tú respondes y ella devuelve la llamada.">Bigger bookings and special requests land in your Inbox with a summary. You answer, and she calls the guest back.</p></div>
+    <div class="card"><h3 data-en="Weekly report" data-es="Informe semanal">Weekly report</h3><p data-en="Calls answered, bookings taken and questions handled, every Monday, plus your own live dashboard." data-es="Llamadas atendidas, reservas tomadas y preguntas resueltas, cada lunes, más tu propio panel en vivo.">Calls answered, bookings taken and questions handled, every Monday, plus your own live dashboard.</p></div>
+    <div class="card"><h3 data-en="Open about being AI" data-es="Dice que es una IA">Open about being AI</h3><p data-en="Every call starts by saying it’s an AI assistant and that the call is transcribed, as the EU AI Act requires." data-es="Cada llamada empieza diciendo que es un asistente IA y que se transcribe, como exige el Reglamento europeo de IA.">Every call starts by saying it’s an AI assistant and that the call is transcribed, as the EU AI Act requires.</p></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="gradient-text" data-en="Want it in your café, restaurant or B&amp;B?" data-es="¿Lo quieres en tu cafetería, restaurante o B&amp;B?">Want it in your café, restaurant or B&amp;B?</h2>
+  <p data-en="We’re finishing the hospitality version with a small group of Irish businesses. Early access members get set-up free and a say in what we build. Pricing confirmed before you commit to anything." data-es="Estamos terminando la versión para hostelería con un pequeño grupo de negocios en Irlanda. Quien entre en el acceso anticipado tiene el montaje gratis y voz en lo que construimos. El precio se confirma antes de que te comprometas a nada.">We’re finishing the hospitality version with a small group of Irish businesses. Early access members get set-up free and a say in what we build. Pricing confirmed before you commit to anything.</p>
+  <a href="mailto:javierignacioayala@gmail.com?subject=FlowServe%20Hospitality%20early%20access" class="btn-primary" data-en="Join early access" data-es="Únete al acceso anticipado">Join early access</a>
+</section>
+
 </main>
-
 <footer class="site">
   <div class="footer-content">
-    <a href="/" class="back-link">←&nbsp;<span data-es="Volver a FlowServe" data-en="Back to FlowServe">Volver a FlowServe</span></a>
     <div class="footer-links">
-      <a href="/healthcare/" data-es="Salud" data-en="Healthcare">Salud</a>
-      <a href="/professional-services/" data-es="Servicios profesionales" data-en="Professional services">Servicios profesionales</a>
-      <a href="mailto:hello@flowserve.io">Email</a>
+      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
+      <a href="/hospitality/" data-en="Hospitality" data-es="Hostelería">Hospitality</a>
+      <a href="/voice/" data-en="AI Receptionist" data-es="Recepcionista IA">AI Receptionist</a>
+      <a href="/demo/" data-en="Live demo" data-es="Demo en vivo">Live demo</a>
+      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+      <a href="/ai-act/" data-en="AI Act checklist" data-es="Checklist Reglamento IA">AI Act checklist</a>
+      <a href="/privacy/" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a href="mailto:javierignacioayala@gmail.com">Email</a>
     </div>
-    <p>FlowServe by CareerStrategy Solutions</p>
-    <p class="footer-fine">© 2026 CareerStrategy Solutions</p>
+    <p data-en="FlowServe — Dublin, Ireland" data-es="FlowServe — Dublín, Irlanda">FlowServe — Dublin, Ireland</p>
+    <p class="footer-fine" data-en="FlowServe is a trading name of Javier Ayala (company in formation). © 2026" data-es="FlowServe es el nombre comercial de Javier Ayala (sociedad en constitución). © 2026">FlowServe is a trading name of Javier Ayala (company in formation). © 2026</p>
   </div>
 </footer>
-
+<a class="wa-float" href="https://wa.me/353876071214?text=Hi%20Javier%2C%20I%27d%20like%20to%20know%20more%20about%20the%20FlowServe%20free%20pilot" target="_blank" rel="noopener" data-en="WhatsApp us" data-es="Escríbenos por WhatsApp">WhatsApp us</a>
 <script src="/i18n.js"></script>
 </body>
 </html>

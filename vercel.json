@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/home-services", "destination": "/", "permanent": false },
+    { "source": "/home-services/(.*)", "destination": "/", "permanent": false },
+    { "source": "/healthcare/(.*)", "destination": "/", "permanent": false },
+    { "source": "/homecare/(.*)", "destination": "/", "permanent": false },
+    { "source": "/professional-services/(.*)", "destination": "/", "permanent": false },
+    { "source": "/hospitality/demo.html", "destination": "/hospitality/", "permanent": false }
+  ]
+}
