@@ -151,7 +151,7 @@ values (
     {"id":"deep","name":"Deep Tissue Massage","duration_min":60,"price_eur":80,"aliases":["deep tissue","sports"]},
     {"id":"back","name":"Back, Neck and Shoulders","duration_min":30,"price_eur":45,"aliases":["back","neck","shoulder"]},
     {"id":"stone","name":"Hot Stone Massage","duration_min":75,"price_eur":95,"aliases":["hot stone","stones"]}]',
-  1, 20, 24, 'Cancelling with less than 24 hours notice means the €20 deposit is kept.',
+  1, null, 24, 'Please give at least 24 hours notice if you need to cancel or move your booking.',
   'This is a FlowServe demo line. If the caller asks, explain that it is a demonstration of the FlowServe AI receptionist for Irish salons and clinics, and that no real appointment is booked with a real studio. Parking: on-street pay and display. Gift vouchers available. Payment by card or cash.',
   true, 1000
 ) on conflict (slug) do nothing;
@@ -159,3 +159,14 @@ values (
 -- Para darte acceso al panel (después de entrar una vez en /app con tu email):
 -- insert into members (business_id, user_id)
 -- select b.id, u.id from businesses b, auth.users u where b.slug = 'halden-demo' and u.email = 'TU_EMAIL';
+
+-- Límite de llamadas de prueba desde la web (botón "Talk to the receptionist")
+create table if not exists demo_web_calls (
+  id bigserial primary key,
+  created_at timestamptz not null default now(),
+  ip_hash text not null,
+  retell_call_id text
+);
+create index if not exists demo_web_calls_time on demo_web_calls (created_at desc);
+alter table demo_web_calls enable row level security;
+revoke all on demo_web_calls from anon, authenticated;

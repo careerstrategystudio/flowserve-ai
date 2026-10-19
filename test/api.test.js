@@ -11,7 +11,7 @@ const BIZ = {
   phone_e164: '+35315550000', retell_agent_id: null, retell_llm_id: null,
 };
 const calls = [];
-const store = { events: [], inbox: [], members: [{ business_id: 'b1', user_id: 'u1' }] };
+const store = { events: [], inbox: [], webcalls: [], members: [{ business_id: 'b1', user_id: 'u1' }] };
 
 before(() => {
   const { privateKey } = crypto.generateKeyPairSync('rsa', { modulusLength: 2048 });
@@ -42,6 +42,8 @@ before(() => {
       const qs = u.search;
       if (table === 'businesses' && method === 'GET') return json(200, qs.includes('halden-demo') || qs.includes('id=eq.b1') ? [BIZ] : []);
       if (table === 'businesses' && method === 'PATCH') { Object.assign(BIZ, body); return json(200, [BIZ]); }
+      if (table === 'demo_web_calls' && method === 'GET') return json(200, store.webcalls.filter((r) => !qs.includes('ip_hash') || qs.includes(r.ip_hash)));
+      if (table === 'demo_web_calls' && method === 'POST') { store.webcalls.push(body); return json(201, [body]); }
       if (table === 'members') return json(200, store.members.filter((m) => qs.includes(m.user_id)));
       if (table === 'inbox_items' && method === 'GET') return json(200, store.inbox.filter((i) => qs.includes(i.id)));
       if (table === 'inbox_items' && method === 'POST') { const r = { id: 'i1', ...body }; store.inbox.push(r); return json(201, [r]); }
@@ -52,6 +54,7 @@ before(() => {
       if (u.pathname === '/create-retell-llm') return json(201, { llm_id: 'llm_1' });
       if (u.pathname === '/create-agent') return json(201, { agent_id: 'agent_1' });
       if (u.pathname === '/v2/create-phone-call') return json(201, { call_id: 'out_1' });
+      if (u.pathname === '/v2/create-web-call') return json(201, { call_id: 'web_1', access_token: 'tok_1' });
     }
     throw new Error(`unexpected fetch ${method} ${url}`);
   };
@@ -157,4 +160,21 @@ test('public config never leaks secrets', async () => {
   const txt = res.body;
   for (const s of ['srv', 'tool-secret', 'hook-secret', 'admin-secret', 'rk', 'PRIVATE KEY']) assert.ok(!txt.includes(`"${s}"`) && !txt.includes(s === 'PRIVATE KEY' ? s : `:"${s}"`), s);
   assert.equal(JSON.parse(txt).configured.retell, true);
+});
+
+test('website demo call: returns a token and stops after 3 per visitor', async () => {
+  const { default: h } = await import('../api/voice/web-call.js');
+  BIZ.retell_agent_id = 'agent_1';
+  const req = () => mockReq({ url: '/api/voice/web-call', headers: { origin: 'https://flowserve.test', 'x-forwarded-for': '1.2.3.4' }, body: {} });
+  for (let i = 0; i < 3; i++) {
+    const res = mockRes(); await h(req(), res);
+    assert.equal(res.statusCode, 200, res.body);
+    assert.equal(parse(res).accessToken, 'tok_1');
+  }
+  const res = mockRes(); await h(req(), res);
+  assert.equal(res.statusCode, 429);
+  const call = calls.find((c) => c.path === '/v2/create-web-call');
+  assert.equal(call.body.agent_override.agent.max_call_duration_ms, 180000);
+  const bad = mockRes(); await h(mockReq({ url: '/api/voice/web-call', headers: { origin: 'https://evil.example' }, body: {} }), bad);
+  assert.equal(bad.statusCode, 403);
 });

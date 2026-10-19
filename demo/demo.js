@@ -51,7 +51,7 @@
       <div class="b-sec"><div class="b-h">${S.services}</div>
         ${C.services.map((s) => `<button class="svc" data-act="svc" data-id="${s.id}"><div><div class="n">${esc(s.n)}</div><div class="m">${s.d} min</div></div><div class="p">${money(s.p)}</div></button>`).join('')}
       </div>
-      <p class="b-pol">${fmt(S.policy, { dep: money(C.deposit) })}</p>`;
+      <p class="b-pol">${S.policy}</p>`;
   }
   function screenTime() {
     const s = svcById(st.svc);
@@ -73,20 +73,8 @@
         <div class="b-sum"><b>${esc(s.n)}</b><br>${cap(dayLong)} · ${st.time}</div>
         <label class="fld"><span>${S.name}</span><input id="f-name" value="${esc(st.name)}" autocomplete="off"></label>
         <label class="fld"><span>${S.email}</span><input id="f-email" value="${esc(st.email)}" autocomplete="off"></label>
-        <div class="b-sum" style="font-size:12.5px">${fmt(S.depositExplain, { dep: money(C.deposit), rest: money(s.p - C.deposit) })}</div>
-        <button class="b-cta" data-act="topay">${fmt(S.payDeposit, { dep: money(C.deposit) })}</button>
-      </div>`;
-  }
-  function screenPay() {
-    const s = svcById(st.svc);
-    return `
-      <div class="pay">
-        <div class="pay-top">${ICON_LOCK} ${S.securePay}</div>
-        <div class="pay-amt">${money(C.deposit)}</div>
-        <div class="pay-for">${fmt(S.payFor, { svc: esc(s.n), biz: esc(C.biz.name) })}</div>
-        <div class="pay-note">${S.payNote}</div>
-        <button class="b-cta" data-act="pay">${fmt(S.payBtn, { dep: money(C.deposit) })}</button>
-        <button class="b-cta sec" data-act="back" data-to="details">${S.back}</button>
+        <div class="b-sum" style="font-size:12.5px">${fmt(S.payOnDay, { price: money(s.p) })}</div>
+        <button class="b-cta" data-act="book">${S.bookBtn}</button>
       </div>`;
   }
   const screenPaying = () => `<div class="spin"></div><p class="center" style="color:var(--b-mut);font-size:14px">${S.processing}</p>`;
@@ -103,19 +91,19 @@
     return `
       <div class="b-pad" style="padding-top:22px"><div class="b-h">${S.cancelQ}</div>
         <div class="b-sum"><b>${esc(s.n)}</b><br>${cap(dayLong)} · ${st.time}</div>
-        <div class="b-sum" style="font-size:13px">${fmt(S.cancelPolicy, { dep: money(C.deposit) })}</div>
+        <div class="b-sum" style="font-size:13px">${S.cancelPolicy}</div>
         <button class="b-cta" data-act="docancel">${S.cancelYes}</button>
         <button class="b-cta sec" data-act="back" data-to="inbox">${S.keepIt}</button>
       </div>`;
   }
   function screenCancelled() {
     return `<div class="b-pad center"><div class="tick">${ICON_OK}</div><div class="b-h">${S.cancelledH}</div>
-      <p style="font-size:14px;color:var(--b-mut)">${fmt(S.cancelledP, { dep: money(C.deposit) })}</p>
+      <p style="font-size:14px;color:var(--b-mut)">${S.cancelledP}</p>
       <button class="b-cta sec" style="margin-top:18px" data-act="back" data-to="inbox">${S.seeInbox}</button></div>`;
   }
 
   function render() {
-    const map = { site: screenSite, time: screenTime, details: screenDetails, pay: screenPay, paying: screenPaying, inbox: screenInbox, cancel: screenCancel, cancelled: screenCancelled };
+    const map = { site: screenSite, time: screenTime, details: screenDetails, paying: screenPaying, inbox: screenInbox, cancel: screenCancel, cancelled: screenCancelled };
     $('#scr').innerHTML = map[st.scr]();
     renderGuide();
   }
@@ -159,11 +147,11 @@
     $('#feed').innerHTML = st.feed.length ? st.feed.map((e) => `<div class="ev ${e.fresh ? 'new' : ''}"><time>${esc(e.t.split(' ').pop())}</time><p>${e.html}</p></div>`).join('') : `<div class="empty">${S.noActivity}</div>`;
     st.feed.forEach((e) => { e.fresh = false; });
     const k = st.k;
-    $('[data-k="dep"]').textContent = money(k.dep);
+    $('[data-k="dep"]').textContent = k.dep;
     $('[data-k="conf"]').textContent = `${k.conf}/${st.diary.length}`;
     $('[data-k="refill"]').textContent = k.refill;
     $('[data-k="saved"]').textContent = money(k.saved);
-    $('#r-dep').textContent = money(k.dep);
+    $('#r-dep').textContent = k.dep;
     $('#r-rem').textContent = k.rem;
     $('#r-refill').textContent = k.refill;
     $('#r-saved').textContent = money(k.saved);
@@ -190,23 +178,20 @@
     svc(el) { st.svc = el.dataset.id; st.phase = 'booking'; go('time'); },
     time(el) { st.time = el.dataset.t; go('details'); },
     back(el) { go(el.dataset.to); },
-    topay() {
+    book() {
       st.name = ($('#f-name').value || C.client.name).trim().slice(0, 40);
       st.email = ($('#f-email').value || C.client.email).trim().slice(0, 60);
-      go('pay');
-    },
-    pay() {
       go('paying');
       later(1300, () => {
         const s = svcById(st.svc);
         const short = shortName(st.name);
         st.mine = { t: st.time, who: short, svc: s.n, st: 'paid', mine: true, p: s.p };
         st.diary.push(st.mine);
-        st.k.dep += C.deposit;
+        st.k.dep += 1;
         st.clock = S.clockNow;
         ev(fmt(S.ev.booked, { who: esc(short), svc: esc(s.n), t: st.time }));
-        later(500, () => { ev(fmt(S.ev.deposit, { dep: money(C.deposit), who: esc(short) })); flash('dep'); });
-        st.mails = [{ when: S.justNow, body: `<h4>${S.mailConfH}</h4><p>${fmt(S.mailConfP, { name: esc(firstName(st.name)) })}</p><dl class="kv"><dt>${S.kService}</dt><dd>${esc(s.n)}</dd><dt>${S.kWhen}</dt><dd>${cap(dayLong)} · ${st.time}</dd><dt>${S.kDeposit}</dt><dd>${money(C.deposit)} ✓</dd><dt>${S.kBalance}</dt><dd>${money(s.p - C.deposit)}</dd></dl><p style="font-size:12px;opacity:.75">${S.mailConfFoot}</p>` }];
+        later(500, () => { ev(fmt(S.ev.confirmSent, { who: esc(short) })); flash('dep'); });
+        st.mails = [{ when: S.justNow, body: `<h4>${S.mailConfH}</h4><p>${fmt(S.mailConfP, { name: esc(firstName(st.name)) })}</p><dl class="kv"><dt>${S.kService}</dt><dd>${esc(s.n)}</dd><dt>${S.kWhen}</dt><dd>${cap(dayLong)} · ${st.time}</dd><dt>${S.kBalance}</dt><dd>${money(s.p)}</dd></dl><p style="font-size:12px;opacity:.75">${S.mailConfFoot}</p>` }];
         st.phase = 'booked';
         go('inbox');
       });
@@ -236,17 +221,17 @@
       const m24 = st.mails.find((m) => m.body.includes('data-act="confirm"'));
       if (m24) m24.body = m24.body.replace(/<div class="row">[\s\S]*<\/div>$/, `<div class="row"><button disabled>${S.cancelledBtn}</button></div>`);
       go('cancelled');
-      ev(fmt(S.ev.cancelled, { who: esc(st.mine.who), dep: money(C.deposit) }));
+      ev(fmt(S.ev.cancelled, { who: esc(st.mine.who) }));
       const w = st.wait[0];
       later(1100, () => { w.st = 'offered'; ev(fmt(S.ev.offered, { t: st.time, who: esc(w.who) })); });
       later(3600, () => {
         w.st = 'booked';
         st.mine.who = w.who; st.mine.st = 'refilled'; st.mine.svc = s.n;
-        st.k.refill++; st.k.saved += s.p; st.k.dep += C.deposit;
-        ev(fmt(S.ev.accepted, { who: esc(w.who), dep: money(C.deposit), t: st.time }));
+        st.k.refill++; st.k.saved += s.p; st.k.dep += 1;
+        ev(fmt(S.ev.accepted, { who: esc(w.who), t: st.time }));
         flash('refill'); flash('saved'); flash('dep');
         st.phase = 'refilled'; renderGuide();
-        st.mails.unshift({ when: S.justNow, body: `<h4>${S.mailCreditH}</h4><p>${fmt(S.mailCreditP, { name: esc(firstName(st.name)), dep: money(C.deposit) })}</p>` });
+        st.mails.unshift({ when: S.justNow, body: `<h4>${S.mailCreditH}</h4><p>${fmt(S.mailCreditP, { name: esc(firstName(st.name)) })}</p>` });
       });
     },
     j4() {
@@ -265,7 +250,7 @@
       const end = h * 60 + m + s.d + 10;
       st.clock = `${cap(dayShort(day))} ${String(Math.floor(end / 60)).padStart(2, '0')}:${String(end % 60).padStart(2, '0')}`;
       st.mine.st = 'done';
-      st.mails.unshift({ when: S.justNow, body: `<h4>${fmt(S.mailDoneH, { name: esc(firstName(st.name)) })}</h4><dl class="kv"><dt>${S.kDeposit}</dt><dd>${money(C.deposit)}</dd><dt>${S.kBalancePaid}</dt><dd>${money(s.p - C.deposit)}</dd><dt>${S.kTotal}</dt><dd>${money(s.p)}</dd></dl>` });
+      st.mails.unshift({ when: S.justNow, body: `<h4>${fmt(S.mailDoneH, { name: esc(firstName(st.name)) })}</h4><dl class="kv"><dt>${S.kBalancePaid}</dt><dd>${money(s.p)}</dd></dl>` });
       st.phase = 'done'; go('inbox');
       ev(fmt(S.ev.done, { who: esc(st.mine.who), total: money(s.p) }));
     },

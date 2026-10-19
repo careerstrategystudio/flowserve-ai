@@ -150,7 +150,7 @@ test('agent config: AI disclosure, every tool wired with secret, valid schemas',
   const p = buildPrompt(biz);
   assert.match(p, /Relaxation Massage: 60 min, €75/);
   assert.match(p, /Wednesday: closed/);
-  assert.match(p, /€20 deposit/);
+  assert.doesNotMatch(p, /deposit/i);
   const agent = buildAgentBody(biz, 'llm_1', 'https://fs.example', 'whk');
   assert.equal(agent.response_engine.llm_id, 'llm_1');
   assert.equal(agent.webhook_url, 'https://fs.example/api/voice/webhook?key=whk');
