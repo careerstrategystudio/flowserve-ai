@@ -19,11 +19,11 @@
 - Se cambió la etiqueta del resultado de "bookings" a "revenue" lost, porque la cifra está en euros.
 
 **Fallos abiertos:**
-- La página irlandesa del competidor no se pudo leer.
-- No hay medición de visitas: falta activar Vercel Web Analytics.
-- La portada dice "Most businesses recover the cost… with four or five saved appointments": es una afirmación sin fuente, fuera de este alcance; revisarla.
+- Cerrado el 20 oct: el competidor queda fuera, por decisión de Javier.
+- Cerrado el 20 oct: Vercel Web Analytics activado. El script `/_vercel/insights/script.js` se añadió a todas las páginas públicas y la política de privacidad lo menciona: no usa cookies y solo cuenta visitas agregadas.
+- Cerrado el 20 oct: en la portada, la frase sin fuente se cambió por un cálculo con el precio que mete el dueño: ⌈249 / precio⌉ citas al mes. Comprobado en el navegador: €60 → 5, €45 → 6, en inglés y en español.
 
 **Siguiente acción:**
 1. Javier hace el push.
-2. Activar Vercel Analytics: Project → Analytics → Enable.
+2. En unos días, mirar Vercel → Analytics para ver las visitas a `/calculator/`.
 3. Lanzar un anuncio de prueba que apunte a `/calculator/?utm_source=...`.

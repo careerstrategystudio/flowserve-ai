@@ -74,7 +74,7 @@
       <div class="big" id="c-out">€780</div>
       <p data-en="lost every month" data-es="perdidos cada mes">lost every month</p>
       <p class="fine"><a href="/calculator/" data-en="And missed calls? Work out what unanswered calls cost you →" data-es="¿Y las llamadas perdidas? Calcula cuánto te cuestan las que no coges →">And missed calls? Work out what unanswered calls cost you →</a></p>
-      <p class="fine" data-en="Most businesses recover the cost of FlowServe with four or five saved appointments a month." data-es="La mayoría de negocios recupera el coste de FlowServe con cuatro o cinco citas salvadas al mes.">Most businesses recover the cost of FlowServe with four or five saved appointments a month.</p>
+      <p class="fine" id="c-be"></p>
     </div>
   </div>
 </section>
@@ -210,8 +210,13 @@
   function calc() {
     var v = Math.max(0, parseFloat(p.value) || 0) * Math.max(0, parseFloat(n.value) || 0) * 52 / 12;
     o.textContent = '€' + Math.round(v).toLocaleString('en-IE');
+    var pr = Math.max(0, parseFloat(p.value) || 0), be = document.getElementById('c-be'), es = document.documentElement.lang === 'es';
+    if (be) be.textContent = pr > 0
+      ? (es ? 'FlowServe Front Desk (€249/mes) se paga solo con ' + Math.ceil(249 / pr) + ' citas salvadas al mes, a tus precios.'
+            : 'FlowServe Front Desk (€249/month) pays for itself with ' + Math.ceil(249 / pr) + ' saved appointments a month at your prices.')
+      : '';
   }
-  p.addEventListener('input', calc); n.addEventListener('input', calc); calc();
+  p.addEventListener('input', calc); n.addEventListener('input', calc); calc(); document.addEventListener('flowserve:lang', calc);
 })();
 </script>
 <footer class="site">
@@ -234,5 +239,6 @@
 </footer>
 <a class="wa-float" href="https://wa.me/353876071214?text=Hi%20Javier%2C%20I%27d%20like%20to%20know%20more%20about%20the%20FlowServe%20free%20pilot" target="_blank" rel="noopener" data-en="WhatsApp us" data-es="Escríbenos por WhatsApp">WhatsApp us</a>
 <script src="/i18n.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
