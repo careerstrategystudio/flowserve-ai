@@ -21,17 +21,28 @@
     <a href="/" class="logo">
       <img class="logo-mark" src="/assets/brand/logo-mark.svg" alt="" width="28" height="28">
       FlowServe
-      <span class="logo-sub" data-en="Front desk on autopilot" data-es="Recepción en piloto automático">Front desk on autopilot</span>
     </a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
-      <a href="/hospitality/" data-en="Hospitality" data-es="Hostelería">Hospitality</a>
-      <a href="/voice/" data-en="AI Receptionist" data-es="Recepcionista IA">AI Receptionist</a>
-      <a href="/social-media/" data-en="Social Media" data-es="Redes Sociales">Social Media</a>
-      <a href="/demo/" data-en="Live demo" data-es="Demo en vivo">Live demo</a>
-      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+    <nav class="nav-links" id="main-nav" aria-label="Main">
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="dd-solutions"><span data-en="Solutions" data-es="Soluciones">Solutions</span><svg aria-hidden="true" viewBox="0 0 12 12" width="10" height="10"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dd-menu" id="dd-solutions">
+          <a href="/voice/"><b data-en="AI Receptionist" data-es="Recepcionista IA">AI Receptionist</b><small data-en="Answers your phone and books 24/7" data-es="Contesta y reserva 24/7">Answers your phone and books 24/7</small></a>
+          <a href="/social-media/"><b data-en="Social Media" data-es="Redes sociales">Social Media</b><small data-en="We manage your Instagram and Facebook" data-es="Gestionamos tu Instagram y Facebook">We manage your Instagram and Facebook</small></a>
+          <a href="/calculator/"><b data-en="Missed-call calculator" data-es="Calculadora">Missed-call calculator</b><small data-en="What unanswered calls cost you" data-es="Cuánto te cuestan las llamadas perdidas">What unanswered calls cost you</small></a>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn" aria-expanded="false" aria-controls="dd-sectors"><span data-en="Industries" data-es="Sectores">Industries</span><svg aria-hidden="true" viewBox="0 0 12 12" width="10" height="10"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-dd-menu" id="dd-sectors">
+          <a href="/beauty-wellness/"><b data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</b><small data-en="Salons, nails, lashes, massage, clinics" data-es="Salones, uñas, pestañas, masaje, clínicas">Salons, nails, lashes, massage, clinics</small></a>
+          <a href="/hospitality/"><b data-en="Hospitality" data-es="Hostelería">Hospitality</b><small data-en="Cafés, restaurants, B&amp;Bs · early access" data-es="Cafeterías, restaurantes, B&amp;Bs · acceso anticipado">Cafés, restaurants, B&amp;Bs · early access</small></a>
+        </div>
+      </div>
+      <a href="/#pricing" data-en="Pricing" data-es="Precios">Pricing</a>
+      <a href="/demo/" data-en="Demo" data-es="Demo">Demo</a>
     </nav>
     <div class="nav-right">
+      <button type="button" class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Menu" data-en-aria="Menu" data-es-aria="Menú"><svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
       <div class="lang-selector" role="group" aria-label="Language / Idioma">
         <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
         <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
@@ -164,6 +175,7 @@
 </footer>
 <a class="wa-float" href="https://wa.me/353876071214?text=Hi%20Javier%2C%20I%27d%20like%20to%20know%20more%20about%20the%20FlowServe%20free%20pilot" target="_blank" rel="noopener" data-en="WhatsApp us" data-es="Escríbenos por WhatsApp">WhatsApp us</a>
 <script src="/i18n.js"></script>
+<script src="/nav.js" defer></script>
 <script type="module" src="/social-media/social.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
