@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missed-call calculator — what unanswered calls cost your salon | FlowServe</title>
+<meta name="description" content="Free calculator for salons, clinics and wellness businesses in Ireland: see how much revenue missed phone calls cost you each month, using your own numbers." data-en-content="Free calculator for salons, clinics and wellness businesses in Ireland: see how much revenue missed phone calls cost you each month, using your own numbers." data-es-content="Calculadora gratis para salones, clínicas y negocios de bienestar en Irlanda: mira cuánto te cuestan al mes las llamadas que no coges, con tus propios números.">
+<meta property="og:title" content="How much are your missed calls costing you?">
+<meta property="og:description" content="Free calculator for salons, clinics and wellness businesses in Ireland: see how much revenue missed phone calls cost you each month, using your own numbers.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://flowserve-ai.vercel.app/calculator/">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/calculator/calc.css">
+</head>
+<body>
+<header class="site">
+  <div class="header-content">
+    <a href="/" class="logo">
+      <img class="logo-mark" src="/assets/brand/logo-mark.svg" alt="" width="28" height="28">
+      FlowServe
+      <span class="logo-sub" data-en="Front desk on autopilot" data-es="Recepción en piloto automático">Front desk on autopilot</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
+      <a href="/hospitality/" data-en="Hospitality" data-es="Hostelería">Hospitality</a>
+      <a href="/voice/" data-en="AI Receptionist" data-es="Recepcionista IA">AI Receptionist</a>
+      <a href="/social-media/" data-en="Social Media" data-es="Redes Sociales">Social Media</a>
+      <a href="/demo/" data-en="Live demo" data-es="Demo en vivo">Live demo</a>
+      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-selector" role="group" aria-label="Language / Idioma">
+        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a href="/pilot/" class="btn-sm" data-en="Try it free" data-es="Pruébalo gratis">Try it free</a>
+    </div>
+  </div>
+</header>
+<main>
+
+<section class="hero kc-hero">
+  <div class="hero-content">
+    <span class="eyebrow" data-en="Missed-call calculator · beauty &amp; wellness" data-es="Calculadora de llamadas perdidas · belleza y bienestar">Missed-call calculator · beauty &amp; wellness</span>
+    <h1 class="gradient-text" data-en="How much are your missed calls costing you?" data-es="¿Cuánto te cuestan las llamadas que no coges?">How much are your missed calls costing you?</h1>
+    <p class="subtitle" data-en="Every time the phone rings while you’re with a client, a booking may be walking away. Put in your own numbers — it takes 20 seconds." data-es="Cada vez que suena el teléfono mientras atiendes a un cliente, puede irse una reserva. Pon tus propios números — tardas 20 segundos.">Every time the phone rings while you’re with a client, a booking may be walking away. Put in your own numbers — it takes 20 seconds.</p>
+  </div>
+</section>
+
+<section class="section kc-section" id="calculator" aria-labelledby="kc-h">
+  <h2 id="kc-h" class="sr-only" data-en="Calculator" data-es="Calculadora">Calculator</h2>
+  <div class="calc kc-calc">
+    <div class="kc-inputs">
+      <label for="k-missed" data-en="Calls you can’t answer in a typical week" data-es="Llamadas que no puedes coger en una semana normal">Calls you can’t answer in a typical week</label>
+      <input id="k-missed" type="number" min="0" max="500" step="1" inputmode="numeric">
+
+      <label for="k-share"><span data-en="How many of those are people wanting to book" data-es="Cuántas son de gente que quiere reservar">How many of those are people wanting to book</span> <b id="k-share-v" class="kc-v"></b></label>
+      <input id="k-share" type="range" min="0" max="100" step="5">
+
+      <label for="k-book"><span data-en="How many would have booked if someone answered" data-es="Cuántas habrían reservado si alguien contestaba">How many would have booked if someone answered</span> <b id="k-book-v" class="kc-v"></b></label>
+      <input id="k-book" type="range" min="0" max="100" step="5">
+
+      <label for="k-price" data-en="Average value of a booking (€)" data-es="Valor medio de una reserva (€)">Average value of a booking (€)</label>
+      <input id="k-price" type="number" min="0" max="2000" step="1" inputmode="decimal">
+      <p class="kc-hint" data-en="Not sure? Leave the starting values — they are only examples. Change them to match your business." data-es="¿No lo sabes? Deja los valores iniciales — son solo ejemplos. Cámbialos para que se parezcan a tu negocio.">Not sure? Leave the starting values — they are only examples. Change them to match your business.</p>
+    </div>
+    <div class="calc-out" aria-live="polite">
+      <p class="kc-label" data-en="Estimated revenue lost every month" data-es="Ingresos que pierdes al mes (estimado)">Estimated revenue lost every month</p>
+      <div class="big" id="k-out">€0</div>
+      <p class="kc-year" id="k-year"></p>
+      <p class="fine" id="k-detail"></p>
+      <p class="kc-verdict" id="k-verdict"></p>
+      <div class="kc-ctas">
+        <a href="/voice/#talk" class="btn-primary" data-en="Hear the AI receptionist now" data-es="Escucha a la recepcionista IA">Hear the AI receptionist now</a>
+        <a href="/pilot/" class="btn-secondary" data-en="Start a free 14-day pilot" data-es="Empieza un piloto gratis de 14 días">Start a free 14-day pilot</a>
+      </div>
+    </div>
+  </div>
+  <p class="kc-method" data-en="How it works: calls per week × 4.33 weeks × share that are booking enquiries × share that would book × average booking value. It is an estimate based only on the numbers you enter — not a result from FlowServe clients." data-es="Cómo se calcula: llamadas por semana × 4,33 semanas × parte que quiere reservar × parte que reservaría × valor medio de la reserva. Es una estimación con tus propios números — no un resultado de clientes de FlowServe.">How it works: calls per week × 4.33 weeks × share that are booking enquiries × share that would book × average booking value. It is an estimate based only on the numbers you enter — not a result from FlowServe clients.</p>
+</section>
+
+<section class="section" id="why">
+  <div class="section-header">
+    <h2 data-en="Why missed calls matter" data-es="Por qué importan las llamadas perdidas">Why missed calls matter</h2>
+    <p data-en="Most callers don’t leave a voicemail and wait. They try the next salon." data-es="La mayoría no deja un mensaje y espera. Llama al siguiente salón.">Most callers don’t leave a voicemail and wait. They try the next salon.</p>
+  </div>
+  <div class="grid kc-stats">
+    <div class="card"><div class="kc-stat">6%</div><p data-en="of UK consumers say they would leave a voicemail when a business doesn’t pick up." data-es="de los consumidores del Reino Unido dice que dejaría un mensaje de voz si un negocio no contesta.">of UK consumers say they would leave a voicemail when a business doesn’t pick up.</p><p class="kc-src">YouGov · <a href="https://www.quo.com/blog/small-business-callback-statistics/" target="_blank" rel="noopener">via Quo</a></p></div>
+    <div class="card"><div class="kc-stat">69%</div><p data-en="of missed business calls get no call-back within 48 hours." data-es="de las llamadas perdidas de negocios no reciben respuesta en 48 horas.">of missed business calls get no call-back within 48 hours.</p><p class="kc-src"><a href="https://www.quo.com/blog/small-business-callback-statistics/" target="_blank" rel="noopener">Quo</a> · 16.7M calls · 2026</p></div>
+    <div class="card"><div class="kc-stat">24/7</div><p data-en="FlowServe answers every call, books straight into your Google Calendar and sends you anything it can’t answer — so the next salon doesn’t get the booking." data-es="FlowServe contesta cada llamada, reserva directo en tu Google Calendar y te pasa lo que no sabe — para que la reserva no se vaya al salón de al lado.">FlowServe answers every call, books straight into your Google Calendar and sends you anything it can’t answer — so the next salon doesn’t get the booking.</p><p class="kc-src"><a href="/voice/" data-en="How the AI receptionist works" data-es="Cómo funciona la recepcionista IA">How the AI receptionist works</a></p></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="gradient-text" data-en="Stop losing bookings to a ringing phone" data-es="Deja de perder reservas por un teléfono que suena">Stop losing bookings to a ringing phone</h2>
+  <p data-en="Talk to our demo receptionist from your browser, then try it free for 14 days on your own line. €249/month after that, cancel any time." data-es="Habla con nuestra recepcionista demo desde el navegador y pruébala gratis 14 días en tu propia línea. Después €249/mes, cancelas cuando quieras.">Talk to our demo receptionist from your browser, then try it free for 14 days on your own line. €249/month after that, cancel any time.</p>
+  <a href="/voice/#talk" class="btn-primary" data-en="Talk to the receptionist" data-es="Habla con la recepcionista">Talk to the receptionist</a>
+</section>
+
+</main>
+<footer class="site">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="/beauty-wellness/" data-en="Beauty &amp; Wellness" data-es="Belleza y Bienestar">Beauty &amp; Wellness</a>
+      <a href="/hospitality/" data-en="Hospitality" data-es="Hostelería">Hospitality</a>
+      <a href="/voice/" data-en="AI Receptionist" data-es="Recepcionista IA">AI Receptionist</a>
+      <a href="/social-media/" data-en="Social Media" data-es="Redes Sociales">Social Media</a>
+      <a href="/demo/" data-en="Live demo" data-es="Demo en vivo">Live demo</a>
+      <a href="/pilot/" data-en="Free pilot" data-es="Piloto gratis">Free pilot</a>
+      <a href="/calculator/" data-en="Missed-call calculator" data-es="Calculadora de llamadas perdidas">Missed-call calculator</a>
+      <a href="/ai-act/" data-en="AI Act checklist" data-es="Checklist Reglamento IA">AI Act checklist</a>
+      <a href="/privacy/" data-en="Privacy" data-es="Privacidad">Privacy</a>
+      <a href="mailto:javierignacioayala@gmail.com">Email</a>
+    </div>
+    <p data-en="FlowServe — Dublin, Ireland" data-es="FlowServe — Dublín, Irlanda">FlowServe — Dublin, Ireland</p>
+    <p class="footer-fine" data-en="FlowServe is a trading name of Javier Ayala (company in formation). © 2026" data-es="FlowServe es el nombre comercial de Javier Ayala (sociedad en constitución). © 2026">FlowServe is a trading name of Javier Ayala (company in formation). © 2026</p>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/353876071214?text=Hi%20Javier%2C%20I%27d%20like%20to%20know%20more%20about%20the%20FlowServe%20free%20pilot" target="_blank" rel="noopener" data-en="WhatsApp us" data-es="Escríbenos por WhatsApp">WhatsApp us</a>
+<script src="/i18n.js"></script>
+<script type="module" src="/calculator/calc.js"></script>
+</body>
+</html>

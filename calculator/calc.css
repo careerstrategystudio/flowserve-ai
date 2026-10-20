@@ -1,0 +1,21 @@
+/* /calculator/ — calculadora de llamadas perdidas. Reutiliza .calc y .calc-out de styles.css. */
+.kc-hero { grid-template-columns: 1fr; padding-top: 3rem; padding-bottom: .5rem; min-height: 0; }
+.kc-hero h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); }
+.kc-hero .hero-content { max-width: 760px; }
+.kc-section { padding-top: 1.5rem; border-top: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.kc-calc { align-items: stretch; }
+.kc-inputs label { display: flex; justify-content: space-between; gap: .75rem; align-items: baseline; }
+.kc-v { color: var(--text-light); font-variant-numeric: tabular-nums; min-width: 3ch; text-align: right; }
+.kc-inputs input[type="range"] { width: 100%; accent-color: var(--primary); margin: .35rem 0 1.25rem; height: 28px; }
+.kc-hint { color: var(--text-muted); font-size: .82rem; line-height: 1.5; margin-top: -.25rem; }
+.kc-label { color: var(--text-muted); font-size: .9rem; margin-bottom: .25rem; }
+.kc-year { color: var(--text-light); font-weight: 600; margin-top: .2rem; }
+.kc-verdict { color: var(--text-light); font-size: .95rem; line-height: 1.55; margin: 1rem 0 1.25rem; }
+.kc-ctas { display: flex; flex-direction: column; gap: .6rem; }
+.kc-ctas a { text-align: center; }
+.kc-method { max-width: 860px; margin: 1.25rem auto 0; color: var(--text-muted); font-size: .82rem; line-height: 1.55; text-align: center; }
+.kc-stat { font-size: 2.4rem; font-weight: 700; color: var(--text-light); font-variant-numeric: tabular-nums; margin-bottom: .4rem; }
+.kc-src { font-size: .78rem; color: var(--text-muted); margin-top: .6rem; }
+.kc-src a { color: var(--text-muted); }
+#calculator { scroll-margin-top: 80px; }
